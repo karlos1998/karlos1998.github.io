@@ -1,2 +1,16 @@
-User-Agent: *
-Disallow:
+User-agent: *
+Allow: /
+
+# Allow all content
+Allow: /
+Allow: /cv
+Allow: /projekty
+Allow: /filmy
+Allow: /sekret
+
+# Disallow development files
+Disallow: /_nuxt/
+Disallow: /node_modules/
+
+# Sitemap
+Sitemap: https://letscode.it/sitemap.xml
