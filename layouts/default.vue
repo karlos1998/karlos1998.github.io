@@ -1,30 +1,55 @@
 <template>
-  <div class="layout" :class="themeClass">
+  <div class="app-layout" :class="themeClass">
+    <!-- Navigation Header -->
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav">
+          <NuxtLink to="/" class="logo">
+            KS
+          </NuxtLink>
+
+          <div class="nav-links">
+            <NuxtLink to="/" class="nav-link">Główna</NuxtLink>
+            <NuxtLink to="/cv" class="nav-link">CV</NuxtLink>
+            <NuxtLink to="/projekty" class="nav-link">Projekty</NuxtLink>
+            <a href="mailto:kontakt@letscode.it" class="nav-link">Kontakt</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
     <!-- Star Background -->
     <StarBackground/>
 
-    <!-- Navigation -->
-    <BurgerMenu/>
-
-    <!-- Signature Logo -->
-    <SignatureLogo/>
-
     <!-- Main Content -->
-    <main class="main-content">
+    <main class="site-main">
       <slot/>
     </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <p class="footer-text">
+            {{ new Date().getFullYear() }} Karol Sójka. Wszystkie prawa zastrzeżone.
+          </p>
+          <div class="footer-links">
+            <a href="http://facebook.com/Fadeusz" target="_blank" class="footer-link">Facebook</a>
+            <a href="mailto:kontakt@letscode.it" class="footer-link">Email</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
 <script setup lang="ts">
 // Import components
 import StarBackground from '~/components/StarBackground.vue'
-import BurgerMenu from '~/components/BurgerMenu.vue'
-import SignatureLogo from '~/components/SignatureLogo.vue'
 
 // Route-based theming
+const route = useRoute()
 const themeClass = computed(() => {
-  const route = useRoute()
   const path = route.path
 
   if (path === '/' || path === '/filmy') return 'theme-yellow'
@@ -36,7 +61,6 @@ const themeClass = computed(() => {
 })
 
 // Page title management
-const route = useRoute()
 const pageTitle = computed(() => {
   const titles: Record<string, string> = {
     '/': "Let's Code It! - Karol Sójka",
@@ -49,7 +73,6 @@ const pageTitle = computed(() => {
   return titles[route.path] || "Let's Code It! - Karol Sójka"
 })
 
-// Update page title
 useHead({
   title: pageTitle,
   meta: [
@@ -98,69 +121,148 @@ useHead({
 </script>
 
 <style scoped>
-.layout {
+.app-layout {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   position: relative;
-  transition: all 0.3s ease;
 }
 
-.main-content {
+/* Header */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg) 0;
+}
+
+.logo {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--color-text);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  transition: var(--transition-fast);
+}
+
+.logo:hover {
+  color: var(--color-accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.nav-link {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.router-link-active {
+  color: var(--color-accent);
+}
+
+.nav-link:hover::after,
+.nav-link.router-link-active::after {
+  width: 100%;
+}
+
+/* Main Content */
+.site-main {
+  flex: 1;
+  padding-top: 80px;
   position: relative;
   z-index: 1;
 }
 
-/* Ensure proper stacking */
-.layout::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-  background: var(--bg-primary);
-}
-</style>
-
-<style>
-/* Global styles that need to be outside scoped */
-.theme-yellow {
-  --theme-primary: var(--yellow-primary);
-  --theme-secondary: var(--yellow-secondary);
-  --theme-accent: var(--yellow-accent);
-  --theme-dark: var(--yellow-dark);
-  --theme-text: var(--yellow-text);
+/* Footer */
+.site-footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: var(--space-xl) 0;
 }
 
-.theme-blue {
-  --theme-primary: var(--blue-primary);
-  --theme-secondary: var(--blue-secondary);
-  --theme-accent: var(--blue-accent);
-  --theme-dark: var(--blue-dark);
-  --theme-text: var(--blue-text);
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
 }
 
-.theme-red {
-  --theme-primary: var(--red-primary);
-  --theme-secondary: var(--red-secondary);
-  --theme-accent: var(--red-accent);
-  --theme-dark: var(--red-dark);
-  --theme-text: var(--red-text);
+.footer-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin: 0;
 }
 
-.theme-green {
-  --theme-primary: var(--green-primary);
-  --theme-secondary: var(--green-secondary);
-  --theme-accent: var(--green-accent);
-  --theme-dark: var(--green-dark);
-  --theme-text: var(--green-text);
+.footer-links {
+  display: flex;
+  gap: var(--space-lg);
 }
 
-.theme-gray {
-  --theme-primary: var(--gray-primary);
-  --theme-secondary: var(--gray-secondary);
-  --theme-accent: var(--gray-accent);
-  --theme-dark: var(--gray-dark);
-  --theme-text: var(--gray-text);
+.footer-link {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--color-accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav {
+    padding: var(--space-md) 0;
+  }
+
+  .nav-links {
+    gap: var(--space-md);
+  }
+
+  .nav-link {
+    font-size: var(--font-size-xs);
+  }
+
+  .site-main {
+    padding-top: 70px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 </style>
