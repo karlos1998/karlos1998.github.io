@@ -5,7 +5,7 @@
       <div class="container">
         <nav class="nav">
           <NuxtLink to="/" class="logo">
-            KS
+            <span class="logo-text">Let's Code It</span>
           </NuxtLink>
 
           <div class="nav-links">
@@ -152,13 +152,20 @@ useHead({
 }
 
 .logo {
-  font-size: var(--font-xl);
+  font-size: var(--font-lg);
   font-weight: 800;
   color: var(--color-text);
   text-decoration: none;
   letter-spacing: -0.03em;
   transition: all 0.2s var(--ease);
   position: relative;
+}
+
+.logo-text {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .logo::after {

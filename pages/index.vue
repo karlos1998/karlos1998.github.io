@@ -1,79 +1,135 @@
 <template>
   <div class="home-page theme-yellow">
-    <section class="section">
+    <!-- Hero Section -->
+    <section class="hero-section">
       <div class="container">
-        <div class="hero">
-          <!-- Floating Badge -->
-          <div class="badge mb-lg float animate-fade-in">
-            ✨ Dostępny do pracy
+        <div class="hero-inner">
+          <!-- Company Brand -->
+          <div class="company-brand mb-xl fade-in">
+            <div class="company-logo">Let's Code It</div>
+            <div class="company-tagline">Software Development & Automation</div>
           </div>
 
-          <!-- Hero Title with Gradient -->
-          <h1 class="hero-title mb-lg animate-fade-in-up animate-delay-1">
-            <span class="gradient-text">Karol Sójka</span>
-          </h1>
+          <!-- Main Hero Content -->
+          <div class="hero-content">
+            <h1 class="hero-title fade-in-up">
+              <span class="hero-greeting">Cześć, jestem</span>
+              <span class="hero-name gradient-text">Karol Sójka</span>
+            </h1>
 
-          <!-- Subtitle -->
-          <p class="hero-subtitle mb-2xl animate-fade-in-up animate-delay-2">
-            Back-end Developer & Automation Specialist z Długosiodła.
-            <br/>
-            Tworzę inteligentne rozwiązania, które działają.
-          </p>
+            <p class="hero-description fade-in-up">
+              Back-end Developer specjalizujący się w automatyzacji procesów biznesowych
+              i tworzeniu inteligentnych systemów. Pomagam firmom oszczędzać czas poprzez
+              technologię.
+            </p>
 
-          <!-- CTA Buttons with Glow -->
-          <div class="hero-actions mb-2xl animate-fade-in-up animate-delay-3">
-            <NuxtLink to="/cv" class="btn btn-primary glow">
-              Zobacz CV
-            </NuxtLink>
-            <NuxtLink to="/projekty" class="btn btn-outline">
-              Projekty
-            </NuxtLink>
-            <a href="mailto:kontakt@letscode.it" class="btn btn-ghost">
-              Kontakt
-            </a>
-          </div>
-
-          <!-- Stats with Gradient Accents -->
-          <div class="stats-grid animate-fade-in-up animate-delay-4">
-            <div class="stat-item">
-              <div class="stat-value gradient-text">5+</div>
-              <div class="stat-label">Lat doświadczenia</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-value gradient-text">50+</div>
-              <div class="stat-label">Projektów</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-value gradient-text">6</div>
-              <div class="stat-label">Technologii</div>
+            <!-- CTA Section -->
+            <div class="cta-section fade-in-up">
+              <NuxtLink to="/cv" class="btn btn-primary glow">
+                <span>Zobacz moje doświadczenie</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                  <path d="M5 10h10M10 5l5 5-5 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </NuxtLink>
+              <NuxtLink to="/projekty" class="btn btn-outline">
+                Projekty
+              </NuxtLink>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Contact Section with Cards -->
-        <div class="contact-section animate-fade-in-up animate-delay-5">
-          <div class="accent-line mb-xl"></div>
-          <div class="contact-grid">
-            <a href="mailto:kontakt@letscode.it" class="contact-card">
-              <div class="contact-icon">✉️</div>
-              <div class="contact-content">
-                <span class="contact-label">Email</span>
-                <span class="contact-value">kontakt@letscode.it</span>
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-wrapper fade-in">
+          <div class="stat-card">
+            <div class="stat-number gradient-text">5+</div>
+            <div class="stat-label">Lat doświadczenia</div>
+            <div class="stat-description">w programowaniu i automatyzacji</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number gradient-text">50+</div>
+            <div class="stat-label">Projektów</div>
+            <div class="stat-description">dla firm i klientów indywidualnych</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number gradient-text">100%</div>
+            <div class="stat-label">Satysfakcja</div>
+            <div class="stat-description">długoterminowa współpraca</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services/Specialization Section -->
+    <section class="services-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title fade-in">Specjalizacja</h2>
+          <p class="section-subtitle fade-in">Technologie, w których czuję się najlepiej</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card fade-in-up">
+            <div class="service-icon">🤖</div>
+            <h3>Automatyzacja Procesów</h3>
+            <p>Web scraping, boty, automatyczne przetwarzanie danych. Eliminacja powtarzalnych zadań.</p>
+          </div>
+
+          <div class="service-card fade-in-up">
+            <div class="service-icon">💬</div>
+            <h3>Chatboty & API</h3>
+            <p>Integracje z Facebook Messenger, Telegram. Systemy komunikacji z klientem.</p>
+          </div>
+
+          <div class="service-card fade-in-up">
+            <div class="service-icon">🔌</div>
+            <h3>Integracje Systemów</h3>
+            <p>Łączenie różnych platform, synchronizacja danych, REST API, webhooks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-header">
+            <h2 class="section-title fade-in">Porozmawiajmy o projekcie</h2>
+            <p class="section-subtitle fade-in">Skontaktuj się ze mną w dogodny dla Ciebie sposób</p>
+          </div>
+
+          <div class="contact-cards">
+            <a href="mailto:kontakt@letscode.it" class="contact-card fade-in-up">
+              <div class="contact-card-icon">✉️</div>
+              <div class="contact-card-content">
+                <div class="contact-card-label">Email</div>
+                <div class="contact-card-value">kontakt@letscode.it</div>
               </div>
+              <div class="contact-card-arrow">→</div>
             </a>
-            <a href="https://www.google.pl/maps/place/Długosiodło" target="_blank" class="contact-card">
-              <div class="contact-icon">📍</div>
-              <div class="contact-content">
-                <span class="contact-label">Lokalizacja</span>
-                <span class="contact-value">Długosiodło, Mazowsze</span>
+
+            <a href="https://www.google.pl/maps/place/Długosiodło" target="_blank" class="contact-card fade-in-up">
+              <div class="contact-card-icon">📍</div>
+              <div class="contact-card-content">
+                <div class="contact-card-label">Lokalizacja</div>
+                <div class="contact-card-value">Długosiodło, Mazowsze</div>
               </div>
+              <div class="contact-card-arrow">→</div>
             </a>
-            <a href="http://facebook.com/Fadeusz" target="_blank" class="contact-card">
-              <div class="contact-icon">🔗</div>
-              <div class="contact-content">
-                <span class="contact-label">Social</span>
-                <span class="contact-value">Facebook</span>
+
+            <a href="http://facebook.com/Fadeusz" target="_blank" class="contact-card fade-in-up">
+              <div class="contact-card-icon">🔗</div>
+              <div class="contact-card-content">
+                <div class="contact-card-label">Social Media</div>
+                <div class="contact-card-value">Facebook</div>
               </div>
+              <div class="contact-card-arrow">→</div>
             </a>
           </div>
         </div>
@@ -84,7 +140,13 @@
 
 <script setup>
 useHead({
-  title: "Let's Code It! - Karol Sójka",
+  title: "Let's Code It! - Karol Sójka - Automatyzacja & Development",
+  meta: [
+    {
+      name: 'description',
+      content: 'Let\'s Code It - Karol Sójka. Specjalista od automatyzacji procesów, back-end development i integracji systemów. 5+ lat doświadczenia.'
+    }
+  ]
 })
 </script>
 
@@ -93,231 +155,316 @@ useHead({
   min-height: 100vh;
 }
 
-.hero {
-  max-width: 900px;
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   padding: var(--space-3xl) 0;
 }
 
+.hero-inner {
+  max-width: 800px;
+}
+
+/* Company Brand */
+.company-brand {
+  margin-bottom: var(--space-2xl);
+}
+
+.company-logo {
+  font-size: var(--font-2xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-sm);
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.company-tagline {
+  font-size: var(--font-sm);
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Hero Content */
+.hero-content {
+  margin-top: var(--space-2xl);
+}
+
 .hero-title {
-  font-size: clamp(3rem, 10vw, 6.5rem);
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -0.05em;
   margin-bottom: var(--space-xl);
 }
 
-.hero-subtitle {
-  font-size: clamp(1.125rem, 2vw, 1.5rem);
-  line-height: 1.6;
+.hero-greeting {
+  display: block;
+  font-size: var(--font-xl);
+  font-weight: 500;
   color: var(--color-text-secondary);
-  max-width: 650px;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.01em;
 }
 
-.hero-actions {
+.hero-name {
+  display: block;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.hero-description {
+  font-size: var(--font-xl);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  max-width: 680px;
+  margin-bottom: var(--space-2xl);
+}
+
+/* CTA Section */
+.cta-section {
   display: flex;
   gap: var(--space-md);
   flex-wrap: wrap;
 }
 
-/* Stats Grid */
-.stats-grid {
+.cta-section .btn {
+  font-size: var(--font-lg);
+}
+
+.btn svg {
+  transition: transform 0.3s var(--ease);
+}
+
+.btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* Stats Section */
+.stats-section {
+  padding: var(--space-3xl) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stats-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-2xl);
-  padding: var(--space-2xl) 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.stat-item {
-  text-align: left;
+.stat-card {
+  text-align: center;
+  padding: var(--space-xl);
 }
 
-.stat-value {
-  font-size: var(--font-4xl);
-  font-weight: 800;
+.stat-number {
+  font-size: var(--font-5xl);
+  font-weight: 900;
   line-height: 1;
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
 }
 
 .stat-label {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.stat-description {
   font-size: var(--font-sm);
   color: var(--color-text-tertiary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+}
+
+/* Services Section */
+.services-section {
+  padding: var(--space-3xl) 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--space-3xl);
+}
+
+.section-title {
+  font-size: var(--font-4xl);
+  font-weight: 800;
+  margin-bottom: var(--space-md);
+}
+
+.section-subtitle {
+  font-size: var(--font-xl);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-card {
+  padding: var(--space-2xl);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  transition: all 0.3s var(--ease);
+}
+
+.service-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(251, 191, 36, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-lg);
+}
+
+.service-card h3 {
+  font-size: var(--font-xl);
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+}
+
+.service-card p {
+  font-size: var(--font-base);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 0;
 }
 
 /* Contact Section */
 .contact-section {
-  margin-top: var(--space-3xl);
-  padding-top: var(--space-2xl);
+  padding: var(--space-3xl) 0 var(--space-3xl);
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
+.contact-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
 }
 
 .contact-card {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
-  padding: var(--space-lg);
-  background: rgba(255, 255, 255, 0.03);
+  gap: var(--space-lg);
+  padding: var(--space-xl);
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   text-decoration: none;
   transition: all 0.3s var(--ease);
 }
 
 .contact-card:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
   border-color: rgba(251, 191, 36, 0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transform: translateX(8px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
-.contact-icon {
-  font-size: 1.5rem;
+.contact-card-icon {
+  font-size: 2rem;
   flex-shrink: 0;
 }
 
-.contact-content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
+.contact-card-content {
+  flex: 1;
 }
 
-.contact-label {
-  font-size: var(--font-xs);
+.contact-card-label {
+  font-size: var(--font-sm);
   color: var(--color-text-tertiary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  margin-bottom: var(--space-xs);
+}
+
+.contact-card-value {
+  font-size: var(--font-xl);
   font-weight: 600;
-}
-
-.contact-value {
-  font-size: var(--font-base);
   color: var(--color-text);
-  font-weight: 500;
 }
 
-.float {
-  animation: float 6s ease-in-out infinite;
+.contact-card-arrow {
+  font-size: var(--font-2xl);
+  color: var(--color-accent);
+  transition: transform 0.3s var(--ease);
 }
 
-.glow {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  animation: glow 2s ease-in-out infinite;
-}
-
-.gradient-text {
-  background: linear-gradient(to right, #ff69b4, #ffe000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.contact-card:hover .contact-card-arrow {
+  transform: translateX(4px);
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
+@media (max-width: 968px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 
-  .btn {
+  .stats-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto;
+    padding: var(--space-2xl) 0;
+  }
+
+  .hero-greeting {
+    font-size: var(--font-lg);
+  }
+
+  .hero-name {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .hero-description {
+    font-size: var(--font-lg);
+  }
+
+  .cta-section {
+    flex-direction: column;
+  }
+
+  .cta-section .btn {
     width: 100%;
     justify-content: center;
   }
 
-  .stats-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-lg);
+  .contact-card {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-md);
   }
 
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .stat-value {
-    font-size: var(--font-3xl);
-  }
-
-  .stat-label {
-    font-size: var(--font-xs);
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes glow {
-  0% {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
-  }
-  100% {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 1s;
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 1s;
-}
-
-.animate-delay-1 {
-  animation-delay: 0.2s;
-}
-
-.animate-delay-2 {
-  animation-delay: 0.4s;
-}
-
-.animate-delay-3 {
-  animation-delay: 0.6s;
-}
-
-.animate-delay-4 {
-  animation-delay: 0.8s;
-}
-
-.animate-delay-5 {
-  animation-delay: 1s;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .contact-card-arrow {
+    display: none;
   }
 }
 </style>
