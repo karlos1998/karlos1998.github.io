@@ -105,14 +105,14 @@
           </div>
 
           <div class="contact-cards">
-            <a href="mailto:kontakt@letscode.it" class="contact-card fade-in-up">
+            <NuxtLink to="/kontakt" class="contact-card fade-in-up">
               <div class="contact-card-icon">✉️</div>
               <div class="contact-card-content">
                 <div class="contact-card-label">Email</div>
-                <div class="contact-card-value">kontakt@letscode.it</div>
+                <div class="contact-card-value">Wyślij wiadomość</div>
               </div>
               <div class="contact-card-arrow">→</div>
-            </a>
+            </NuxtLink>
 
             <a href="https://www.google.pl/maps/place/Długosiodło" target="_blank" class="contact-card fade-in-up">
               <div class="contact-card-icon">📍</div>

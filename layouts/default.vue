@@ -12,7 +12,7 @@
             <NuxtLink to="/" class="nav-link">Główna</NuxtLink>
             <NuxtLink to="/cv" class="nav-link">CV</NuxtLink>
             <NuxtLink to="/projekty" class="nav-link">Projekty</NuxtLink>
-            <a href="mailto:kontakt@letscode.it" class="nav-link">Kontakt</a>
+            <NuxtLink to="/kontakt" class="nav-link">Kontakt</NuxtLink>
           </div>
         </nav>
       </div>
@@ -55,10 +55,10 @@ const route = useRoute()
 const themeClass = computed(() => {
   const path = route.path
 
-  if (path === '/' || path === '/filmy') return 'theme-yellow'
+  if (path === '/') return 'theme-yellow'
   if (path === '/cv') return 'theme-blue'
   if (path === '/projekty') return 'theme-red'
-  if (path === '/sekret') return 'theme-green'
+  if (path === '/kontakt') return 'theme-green'
 
   return 'theme-yellow' // default
 })
@@ -69,8 +69,7 @@ const pageTitle = computed(() => {
     '/': "Let's Code It! - Karol Sójka",
     '/cv': 'Moje CV - Karol Sójka',
     '/projekty': 'Projekty - Karol Sójka',
-    '/filmy': 'Filmy - Karol Sójka',
-    '/sekret': 'Sekret - Karol Sójka'
+    '/kontakt': 'Kontakt - Karol Sójka'
   }
 
   return titles[route.path] || "Let's Code It! - Karol Sójka"
