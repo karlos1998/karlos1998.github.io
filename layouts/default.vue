@@ -88,6 +88,7 @@ const isMinimized = ref(false)
 const scrollProgress = ref(0)
 let lastScrollY = 0
 let ticking = false
+let scrollTimeout: NodeJS.Timeout | null = null
 
 const handleScroll = () => {
   const currentScrollY = window.scrollY
@@ -99,17 +100,18 @@ const handleScroll = () => {
   // Navbar becomes "scrolled" after 50px
   isScrolled.value = currentScrollY > 50
 
-  // Minimize navbar when scrolling down past threshold
-  if (currentScrollY > lastScrollY && currentScrollY > 200) {
-    // Scrolling down - minimize to floating style
-    isMinimized.value = true
-  } else if (currentScrollY < lastScrollY - 10) {
-    // Scrolling up - expand back
-    isMinimized.value = false
-  }
-
   // If we're at the top, always show full navbar
   if (currentScrollY < 100) {
+    isMinimized.value = false
+  }
+  // Minimize navbar when scrolling down past threshold
+  else if (currentScrollY > 200 && currentScrollY > lastScrollY + 50) {
+    // Scrolling down significantly - minimize to floating style
+    isMinimized.value = true
+  }
+  // Expand back when scrolling up
+  else if (currentScrollY < lastScrollY - 50) {
+    // Scrolling up significantly - expand back
     isMinimized.value = false
   }
 
@@ -262,15 +264,16 @@ useHead({
 .site-header {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   z-index: 100;
   background: rgba(10, 10, 10, 0.4);
   backdrop-filter: blur(8px) saturate(150%);
   -webkit-backdrop-filter: blur(8px) saturate(150%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateY(0);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: width, top, background, border-radius;
 }
 
 /* Scrolled state */
@@ -286,15 +289,13 @@ useHead({
 /* Minimized floating state */
 .site-header.minimized {
   top: 20px;
-  left: 50%;
-  right: auto;
-  transform: translateX(-50%);
   width: auto;
   max-width: 500px;
   background: rgba(10, 10, 10, 0.95);
   backdrop-filter: blur(24px) saturate(200%);
   -webkit-backdrop-filter: blur(24px) saturate(200%);
   border: 1px solid rgba(251, 191, 36, 0.2);
+  border-bottom: 1px solid rgba(251, 191, 36, 0.2);
   border-radius: 9999px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6),
   0 0 0 1px rgba(251, 191, 36, 0.15) inset,
@@ -312,7 +313,7 @@ useHead({
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 0;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-header.scrolled .nav {
@@ -329,14 +330,14 @@ useHead({
   text-decoration: none;
   position: relative;
   display: block;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo-container {
   display: flex;
   align-items: center;
   gap: 0.875rem;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-header.minimized .logo-container {
@@ -351,7 +352,7 @@ useHead({
   font-weight: 800;
   font-family: 'Courier New', monospace;
   color: var(--color-accent);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
@@ -392,7 +393,7 @@ useHead({
   font-weight: 800;
   color: var(--color-text);
   letter-spacing: -0.03em;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -410,7 +411,7 @@ useHead({
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-links-minimized {
