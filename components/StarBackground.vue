@@ -52,10 +52,9 @@ const createStarField = () => {
 
     // Draw gradient background
     const gradient = ctx.createLinearGradient(0, 0, 0, canvasHeight.value)
-    gradient.addColorStop(0, '#0c0c0c')
-    gradient.addColorStop(0.3, '#1a1a2e')
-    gradient.addColorStop(0.7, '#16213e')
-    gradient.addColorStop(1, '#0f0f23')
+    gradient.addColorStop(0, '#0a0a0a')
+    gradient.addColorStop(0.5, '#0f0f0f')
+    gradient.addColorStop(1, '#0a0a0a')
     ctx.fillStyle = gradient
     ctx.fillRect(0, 0, canvasWidth.value, canvasHeight.value)
 

@@ -1,0 +1,64 @@
+[
+  {
+    "id": "sim-gateway",
+    "title": "SIM Gateway na Raspberry Pi",
+    "description": "Bramka SMS wykorzystująca modem GSM i Raspberry Pi. System obsługuje wysyłkę masowych powiadomień, kolejkowanie wiadomości i monitoring statusu dostarczenia. Wykorzystywana w bankach do alertów transakcyjnych.",
+    "date": "2020-10",
+    "tags": [
+      "Python",
+      "Raspberry Pi",
+      "IoT",
+      "GSM"
+    ],
+    "link": {
+      "url": "https://github.com/Fadeusz/SIM-engine",
+      "label": "Zobacz na GitHub"
+    }
+  },
+  {
+    "id": "hardware-monitor",
+    "title": "Hardware Monitor",
+    "description": "Aplikacja desktopowa monitorująca wydajność komputera w czasie rzeczywistym. Wyświetla temperaturę CPU/GPU, wykorzystanie pamięci RAM, obciążenie dysku. Niski overhead, działa w systemie tray.",
+    "date": "2020-09",
+    "tags": [
+      "C#",
+      "WinForms",
+      "Performance"
+    ],
+    "link": {
+      "url": "https://github.com/Fadeusz/HardwareMonitor",
+      "label": "Zobacz na GitHub"
+    }
+  },
+  {
+    "id": "pbs-banking",
+    "title": "PBS - Banking SMS Bot",
+    "description": "System powiadomień SMS dla grupy banków spółdzielczych. Automatyczne alerty o transakcjach, logowaniach do systemu, zmianach sald. Integracja z core banking systems poprzez REST API.",
+    "date": "2020-08",
+    "tags": [
+      "PHP",
+      "JavaScript",
+      "Banking",
+      "API"
+    ],
+    "link": {
+      "url": "https://pbs.letscode.it",
+      "label": "Zobacz projekt"
+    }
+  },
+  {
+    "id": "dlugosiollo-film",
+    "title": "Film promocyjny - Długosiodło",
+    "description": "Profesjonalny film promocyjny miejscowości Długosiodło. Montaż, korekcja kolorów, sound design. Wykorzystany do promocji turystyki lokalnej.",
+    "date": "2020-07",
+    "tags": [
+      "Video",
+      "Production",
+      "Media"
+    ],
+    "link": {
+      "url": "https://www.youtube.com/watch?v=fu2swf9R-Mg",
+      "label": "Zobacz na YouTube"
+    }
+  }
+]

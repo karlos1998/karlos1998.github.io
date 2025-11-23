@@ -31,7 +31,7 @@
       <div class="container">
         <div class="footer-content">
           <p class="footer-text">
-            {{ new Date().getFullYear() }} Karol Sójka. Wszystkie prawa zastrzeżone.
+            © {{ currentYear }} Karol Sójka. Wszystkie prawa zastrzeżone.
           </p>
           <div class="footer-links">
             <a href="http://facebook.com/Fadeusz" target="_blank" class="footer-link">Facebook</a>
@@ -46,6 +46,9 @@
 <script setup lang="ts">
 // Import components
 import StarBackground from '~/components/StarBackground.vue'
+
+// Footer year
+const currentYear = new Date().getFullYear()
 
 // Route-based theming
 const route = useRoute()
@@ -135,60 +138,78 @@ useHead({
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(10, 10, 15, 0.8);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-lg) 0;
+  padding: 1.25rem 0;
 }
 
 .logo {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-xl);
   font-weight: 800;
   color: var(--color-text);
   text-decoration: none;
-  letter-spacing: -0.02em;
-  transition: var(--transition-fast);
+  letter-spacing: -0.03em;
+  transition: all 0.2s var(--ease);
+  position: relative;
+}
+
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width 0.3s var(--ease);
 }
 
 .logo:hover {
   color: var(--color-accent);
 }
 
+.logo:hover::after {
+  width: 100%;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
-  gap: var(--space-xl);
+  gap: 2rem;
 }
 
 .nav-link {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-sm);
   font-weight: 500;
   color: var(--color-text-secondary);
   text-decoration: none;
-  transition: var(--transition-fast);
+  transition: all 0.2s var(--ease);
   position: relative;
+  padding: 0.5rem 0;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: 0;
   left: 0;
   width: 0;
   height: 2px;
   background: var(--color-accent);
-  transition: var(--transition-fast);
+  transition: width 0.2s var(--ease);
 }
 
 .nav-link:hover,
 .nav-link.router-link-active {
-  color: var(--color-accent);
+  color: var(--color-text);
 }
 
 .nav-link:hover::after,
@@ -208,7 +229,7 @@ useHead({
 .site-footer {
   position: relative;
   z-index: 1;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding: var(--space-xl) 0;
 }
 
@@ -221,7 +242,7 @@ useHead({
 }
 
 .footer-text {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-sm);
   color: var(--color-text-tertiary);
   margin: 0;
 }
@@ -232,10 +253,10 @@ useHead({
 }
 
 .footer-link {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-sm);
   color: var(--color-text-tertiary);
   text-decoration: none;
-  transition: var(--transition-fast);
+  transition: all 0.2s var(--ease);
 }
 
 .footer-link:hover {
@@ -245,15 +266,15 @@ useHead({
 /* Responsive */
 @media (max-width: 768px) {
   .nav {
-    padding: var(--space-md) 0;
+    padding: 1rem 0;
   }
 
   .nav-links {
-    gap: var(--space-md);
+    gap: 1.5rem;
   }
 
   .nav-link {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-xs);
   }
 
   .site-main {
