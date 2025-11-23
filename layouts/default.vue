@@ -1,5 +1,8 @@
 <template>
   <div class="app-layout" :class="themeClass">
+    <!-- Page Loader -->
+    <PageLoader/>
+
     <!-- Navigation Header -->
     <header class="site-header">
       <div class="container">
@@ -46,6 +49,7 @@
 <script setup lang="ts">
 // Import components
 import StarBackground from '~/components/StarBackground.vue'
+import PageLoader from '~/components/PageLoader.vue'
 
 // Footer year
 const currentYear = new Date().getFullYear()
