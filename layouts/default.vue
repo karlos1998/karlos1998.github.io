@@ -7,35 +7,41 @@
     <div class="scroll-progress-bar" :style="{ width: scrollProgress + '%' }"></div>
 
     <!-- Navigation Header -->
-    <header class="site-header" :class="{ 'scrolled': isScrolled, 'hidden': isNavHidden }">
+    <header class="site-header" :class="{ 'scrolled': isScrolled, 'minimized': isMinimized }">
       <div class="container">
         <nav class="nav">
-          <NuxtLink to="/" class="logo" :class="{ 'logo-compact': isScrolled }">
+          <NuxtLink to="/" class="logo" :class="{ 'logo-compact': isScrolled || isMinimized }">
             <div class="logo-container">
               <div class="logo-icon">
                 <span class="bracket">&lt;</span>
                 <span class="slash">/</span>
                 <span class="bracket">&gt;</span>
               </div>
-              <span class="logo-text">Let's Code It</span>
+              <Transition name="fade-slide">
+                <span v-if="!isMinimized" class="logo-text">Let's Code It</span>
+              </Transition>
             </div>
           </NuxtLink>
 
-          <div class="nav-links">
-            <NuxtLink to="/" class="nav-link">
-              <span class="nav-link-text">Główna</span>
+          <div class="nav-links" :class="{ 'nav-links-minimized': isMinimized }">
+            <NuxtLink to="/" class="nav-link" :title="isMinimized ? 'Główna' : ''">
+              <span v-if="!isMinimized" class="nav-link-text">Główna</span>
+              <span v-else class="nav-link-icon">🏠</span>
               <span class="nav-link-indicator"></span>
             </NuxtLink>
-            <NuxtLink to="/cv" class="nav-link">
-              <span class="nav-link-text">CV</span>
+            <NuxtLink to="/cv" class="nav-link" :title="isMinimized ? 'CV' : ''">
+              <span v-if="!isMinimized" class="nav-link-text">CV</span>
+              <span v-else class="nav-link-icon">📄</span>
               <span class="nav-link-indicator"></span>
             </NuxtLink>
-            <NuxtLink to="/projekty" class="nav-link">
-              <span class="nav-link-text">Projekty</span>
+            <NuxtLink to="/projekty" class="nav-link" :title="isMinimized ? 'Projekty' : ''">
+              <span v-if="!isMinimized" class="nav-link-text">Projekty</span>
+              <span v-else class="nav-link-icon">💼</span>
               <span class="nav-link-indicator"></span>
             </NuxtLink>
-            <NuxtLink to="/kontakt" class="nav-link nav-link-cta">
-              <span class="nav-link-text">Kontakt</span>
+            <NuxtLink to="/kontakt" class="nav-link nav-link-cta" :title="isMinimized ? 'Kontakt' : ''">
+              <span v-if="!isMinimized" class="nav-link-text">Kontakt</span>
+              <span v-else class="nav-link-icon">✉️</span>
               <span class="nav-link-glow"></span>
             </NuxtLink>
           </div>
@@ -78,7 +84,7 @@ const currentYear = new Date().getFullYear()
 
 // Scroll-based navbar effects
 const isScrolled = ref(false)
-const isNavHidden = ref(false)
+const isMinimized = ref(false)
 const scrollProgress = ref(0)
 let lastScrollY = 0
 let ticking = false
@@ -93,13 +99,18 @@ const handleScroll = () => {
   // Navbar becomes "scrolled" after 50px
   isScrolled.value = currentScrollY > 50
 
-  // Hide navbar when scrolling down, show when scrolling up
-  if (currentScrollY > lastScrollY && currentScrollY > 100) {
-    // Scrolling down
-    isNavHidden.value = true
-  } else {
-    // Scrolling up
-    isNavHidden.value = false
+  // Minimize navbar when scrolling down past threshold
+  if (currentScrollY > lastScrollY && currentScrollY > 200) {
+    // Scrolling down - minimize to floating style
+    isMinimized.value = true
+  } else if (currentScrollY < lastScrollY - 10) {
+    // Scrolling up - expand back
+    isMinimized.value = false
+  }
+
+  // If we're at the top, always show full navbar
+  if (currentScrollY < 100) {
+    isMinimized.value = false
   }
 
   lastScrollY = currentScrollY
@@ -202,6 +213,22 @@ useHead({
   position: relative;
 }
 
+/* Transitions */
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
 /* Scroll Progress Bar */
 .scroll-progress-bar {
   position: fixed;
@@ -242,7 +269,7 @@ useHead({
   backdrop-filter: blur(8px) saturate(150%);
   -webkit-backdrop-filter: blur(8px) saturate(150%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateY(0);
 }
 
@@ -256,9 +283,28 @@ useHead({
   0 0 0 1px rgba(251, 191, 36, 0.1) inset;
 }
 
-/* Hidden state */
-.site-header.hidden {
-  transform: translateY(-100%);
+/* Minimized floating state */
+.site-header.minimized {
+  top: 20px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  width: auto;
+  max-width: 500px;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: 9999px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6),
+  0 0 0 1px rgba(251, 191, 36, 0.15) inset,
+  0 0 40px rgba(251, 191, 36, 0.1);
+  padding: 0 1rem;
+}
+
+.site-header.minimized .container {
+  padding: 0;
+  max-width: none;
 }
 
 .nav {
@@ -266,11 +312,16 @@ useHead({
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 0;
-  transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-header.scrolled .nav {
   padding: 0.875rem 0;
+}
+
+.site-header.minimized .nav {
+  padding: 0.625rem 0;
+  gap: 1rem;
 }
 
 /* Logo */
@@ -278,14 +329,18 @@ useHead({
   text-decoration: none;
   position: relative;
   display: block;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo-container {
   display: flex;
   align-items: center;
   gap: 0.875rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.site-header.minimized .logo-container {
+  gap: 0;
 }
 
 .logo-icon {
@@ -296,7 +351,7 @@ useHead({
   font-weight: 800;
   font-family: 'Courier New', monospace;
   color: var(--color-accent);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
@@ -313,6 +368,10 @@ useHead({
 .logo.logo-compact .logo-icon {
   font-size: 1.375rem;
   gap: 0.0625rem;
+}
+
+.site-header.minimized .logo-icon {
+  font-size: 1.25rem;
 }
 
 .logo:hover .logo-icon .bracket:first-child {
@@ -333,12 +392,13 @@ useHead({
   font-weight: 800;
   color: var(--color-text);
   letter-spacing: -0.03em;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   position: relative;
+  white-space: nowrap;
 }
 
 .logo.logo-compact .logo-text {
@@ -350,6 +410,11 @@ useHead({
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links-minimized {
+  gap: 0.25rem;
 }
 
 .nav-link {
@@ -360,11 +425,27 @@ useHead({
   position: relative;
   padding: 0.625rem 1.125rem;
   border-radius: 0.625rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-header.minimized .nav-link {
+  padding: 0.5rem 0.875rem;
+  border-radius: 9999px;
+  min-width: 44px;
 }
 
 .nav-link-text {
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link-icon {
+  font-size: 1.25rem;
   position: relative;
   z-index: 2;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -382,10 +463,20 @@ useHead({
   border-radius: 2px;
 }
 
+.site-header.minimized .nav-link-indicator {
+  display: none;
+}
+
 .nav-link:hover,
 .nav-link.router-link-active {
   color: var(--color-text);
   background: rgba(255, 255, 255, 0.05);
+}
+
+.site-header.minimized .nav-link:hover,
+.site-header.minimized .nav-link.router-link-active {
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.05);
 }
 
 .nav-link:hover .nav-link-indicator,
@@ -403,6 +494,10 @@ useHead({
   position: relative;
 }
 
+.site-header.minimized .nav-link-cta {
+  margin-left: 0.25rem;
+}
+
 .nav-link-cta .nav-link-text {
   position: relative;
   z-index: 2;
@@ -417,12 +512,20 @@ useHead({
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.site-header.minimized .nav-link-glow {
+  border-radius: 9999px;
+}
+
 .nav-link-cta:hover {
   background: linear-gradient(135deg, rgba(251, 191, 36, 0.25) 0%, rgba(245, 158, 11, 0.25) 100%);
   border-color: rgba(251, 191, 36, 0.5);
   box-shadow: 0 0 20px rgba(251, 191, 36, 0.2),
   0 4px 12px rgba(0, 0, 0, 0.3);
   transform: translateY(-1px);
+}
+
+.site-header.minimized .nav-link-cta:hover {
+  transform: scale(1.08);
 }
 
 .nav-link-cta:hover .nav-link-glow {
@@ -484,6 +587,12 @@ useHead({
 
 /* Responsive */
 @media (max-width: 768px) {
+  .site-header.minimized {
+    top: 10px;
+    max-width: calc(100% - 2rem);
+    padding: 0 0.75rem;
+  }
+
   .nav {
     padding: 1rem 0;
   }
@@ -492,8 +601,17 @@ useHead({
     padding: 0.75rem 0;
   }
 
+  .site-header.minimized .nav {
+    padding: 0.5rem 0;
+    gap: 0.5rem;
+  }
+
   .nav-links {
     gap: 0.25rem;
+  }
+
+  .nav-links-minimized {
+    gap: 0.125rem;
   }
 
   .nav-link {
@@ -501,8 +619,21 @@ useHead({
     padding: 0.5rem 0.75rem;
   }
 
+  .site-header.minimized .nav-link {
+    padding: 0.5rem 0.625rem;
+    min-width: 40px;
+  }
+
+  .nav-link-icon {
+    font-size: 1.125rem;
+  }
+
   .nav-link-cta {
     margin-left: 0.25rem;
+  }
+
+  .site-header.minimized .nav-link-cta {
+    margin-left: 0.125rem;
   }
 
   .logo-text {
@@ -519,6 +650,10 @@ useHead({
 
   .logo.logo-compact .logo-icon {
     font-size: 1.25rem;
+  }
+
+  .site-header.minimized .logo-icon {
+    font-size: 1.125rem;
   }
 
   .site-main {
@@ -544,6 +679,7 @@ useHead({
     background: radial-gradient(circle, rgba(251, 191, 36, 0.2) 0%, transparent 70%);
     transform: translate(-50%, -50%);
     transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1), height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
   }
 
   .nav-link:hover::before {
