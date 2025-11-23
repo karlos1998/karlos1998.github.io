@@ -1,81 +1,107 @@
 <template>
-  <div class="page-projects">
+  <div class="projects-page theme-red">
     <section class="section">
-      <div class="main-content">
+      <div class="container">
         <!-- Header -->
-        <div class="page-header fade-in-up">
-          <h1>
-            <span>Ostatnie projekty</span>
-          </h1>
-        </div>
-
-        <!-- Intro Text -->
-        <div class="intro-text">
-          <p class="small">
-            <span>Było ich znacznie więcej, serio</span>
-            <span>Ale nie wszystkimi chcę lub powinienem się chwalić :)</span>
-          </p>
+        <div class="projects-header mb-2xl">
+          <h1 class="mb-md">Projekty</h1>
+          <p class="lead mb-lg">Wybrane prace i open-source contributions</p>
+          <div class="accent-line"></div>
         </div>
 
         <!-- Projects List -->
-        <div class="projects-section">
-          <ul class="list blocks">
-            <li class="list-item project-item">
-              <h4>Październik, 2020</h4>
-              <p>Bramka SIM na Raspberry PI</p>
-              <a
-                  href="https://github.com/Fadeusz/SIM-engine"
-                  class="link small"
-                  target="_blank"
-                  title="Zobacz na GitHub"
-              >
-                GitHub ↗
+        <div class="projects-list">
+          <article class="project-item">
+            <div class="project-meta">
+              <time class="project-date">Październik 2020</time>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Raspberry Pi</span>
+                <span class="tag">IoT</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">SIM Gateway na Raspberry Pi</h3>
+              <p class="project-description">
+                Bramka SMS wykorzystująca modem GSM i Raspberry Pi. System obsługuje wysyłkę masowych powiadomień,
+                kolejkowanie wiadomości i monitoring statusu dostarczenia. Wykorzystywana w bankach do alertów
+                transakcyjnych.
+              </p>
+              <a href="https://github.com/Fadeusz/SIM-engine" target="_blank" class="project-link">
+                Zobacz na GitHub →
               </a>
-            </li>
-            <li class="list-item project-item">
-              <h4>Wrzesień, 2020</h4>
-              <p>Monitor wydajności PC</p>
-              <a
-                  href="https://github.com/Fadeusz/HardwareMonitor"
-                  class="link small"
-                  target="_blank"
-                  title="Zobacz na GitHub"
-              >
-                GitHub ↗
+            </div>
+          </article>
+
+          <article class="project-item">
+            <div class="project-meta">
+              <time class="project-date">Wrzesień 2020</time>
+              <div class="project-tags">
+                <span class="tag">C#</span>
+                <span class="tag">WinForms</span>
+                <span class="tag">Monitoring</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Hardware Monitor</h3>
+              <p class="project-description">
+                Aplikacja desktopowa monitorująca wydajność komputera w czasie rzeczywistym. Wyświetla temperaturę
+                CPU/GPU,
+                wykorzystanie pamięci RAM, obciążenie dysku. Niski overhead, działa w systemie tray.
+              </p>
+              <a href="https://github.com/Fadeusz/HardwareMonitor" target="_blank" class="project-link">
+                Zobacz na GitHub →
               </a>
-            </li>
-            <li class="list-item project-item">
-              <h4>Sierpień, 2020</h4>
-              <p>Bot SMS do grupy banków Spółdzielczych</p>
-              <a
-                  href="https://pbs.letscode.it"
-                  class="link small"
-                  target="_blank"
-                  title="Zobacz projekt"
-              >
-                Zobacz ↗
+            </div>
+          </article>
+
+          <article class="project-item">
+            <div class="project-meta">
+              <time class="project-date">Sierpień 2020</time>
+              <div class="project-tags">
+                <span class="tag">PHP</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Banking</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">PBS - Banking SMS Bot</h3>
+              <p class="project-description">
+                System powiadomień SMS dla grupy banków spółdzielczych. Automatyczne alerty o transakcjach,
+                logowaniach do systemu, zmianach sald. Integracja z core banking systems poprzez REST API.
+              </p>
+              <a href="https://pbs.letscode.it" target="_blank" class="project-link">
+                Zobacz projekt →
               </a>
-            </li>
-            <li class="list-item project-item">
-              <h4>Lipiec, 2020</h4>
-              <p>Film o Długosiodle</p>
-              <a
-                  href="https://www.youtube.com/watch?v=fu2swf9R-Mg"
-                  class="link small"
-                  target="_blank"
-                  title="Zobacz na YouTube"
-              >
-                YouTube ↗
+            </div>
+          </article>
+
+          <article class="project-item">
+            <div class="project-meta">
+              <time class="project-date">Lipiec 2020</time>
+              <div class="project-tags">
+                <span class="tag">Video</span>
+                <span class="tag">Production</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Film promocyjny - Długosiodło</h3>
+              <p class="project-description">
+                Profesjonalny film promocyjny miejscowości Długosiodło. Montaż, korekcja kolorów,
+                sound design. Wykorzystany do promocji turystyki lokalnej.
+              </p>
+              <a href="https://www.youtube.com/watch?v=fu2swf9R-Mg" target="_blank" class="project-link">
+                Zobacz na YouTube →
               </a>
-            </li>
-          </ul>
+            </div>
+          </article>
         </div>
 
-        <!-- Back Link -->
-        <div class="back-link">
-          <NuxtLink to="/" class="link router" title="Strona główna">
-            Strona główna
-          </NuxtLink>
+        <!-- Archive Notice -->
+        <div class="archive-notice mt-2xl">
+          <p class="text-muted">
+            Większość projektów komercyjnych objęta NDA. Powyższe to jedynie wybrane, publiczne prace.
+          </p>
         </div>
       </div>
     </section>
@@ -83,138 +109,135 @@
 </template>
 
 <script setup>
-// Page head
 useHead({
   title: 'Projekty - Karol Sójka',
-})
-
-// GSAP animations
-onMounted(() => {
-  import('gsap').then(({gsap, Power3}) => {
-    // Animate header
-    gsap.from('.page-header h1 span', {
-      duration: 1,
-      y: 50,
-      opacity: 0,
-      ease: Power3.easeOut
-    })
-
-    // Animate intro text
-    gsap.from('.intro-text p span', {
-      duration: 0.8,
-      y: 30,
-      opacity: 0,
-      stagger: 0.2,
-      ease: Power3.easeOut,
-      delay: 0.3
-    })
-
-    // Animate projects
-    gsap.from('.projects-section .project-item', {
-      duration: 0.8,
-      y: 40,
-      opacity: 0,
-      stagger: 0.15,
-      ease: Power3.easeOut,
-      delay: 0.8
-    })
-
-    // Animate back link
-    gsap.from('.back-link', {
-      duration: 0.6,
-      y: 20,
-      opacity: 0,
-      ease: Power3.easeOut,
-      delay: 1.5
-    })
-  })
 })
 </script>
 
 <style scoped>
-.page-projects {
-  width: 100%;
+.projects-page {
   min-height: 100vh;
 }
 
-.page-header {
-  margin-bottom: 2rem;
-  text-align: center;
+.projects-header {
+  max-width: 700px;
 }
 
-.intro-text {
-  text-align: center;
-  margin-bottom: 3rem;
+.lead {
+  font-size: var(--font-size-2xl);
+  color: var(--color-text-secondary);
+  font-weight: 400;
 }
 
-.intro-text p {
+/* Projects List */
+.projects-list {
+  max-width: 900px;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  justify-content: center;
-  align-items: center;
-}
-
-.projects-section {
-  margin: 3rem 0;
+  gap: var(--space-2xl);
+  margin-top: var(--space-2xl);
 }
 
 .project-item {
-  position: relative;
-  transition: all 0.3s ease;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.project-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+.project-item:last-child {
+  border-bottom: none;
 }
 
-.project-item h4 {
-  color: var(--theme-primary);
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
+/* Meta Column */
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
 }
 
-.project-item p {
-  margin-bottom: 1rem;
+.project-date {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
   font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.project-item .link {
-  position: absolute;
-  bottom: 1.5rem;
-  right: 1.5rem;
+.project-tags {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
 }
 
-.back-link {
+/* Content Column */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.project-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.project-description {
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  margin-top: var(--space-xs);
+  transition: var(--transition-fast);
+}
+
+.project-link:hover {
+  color: var(--color-text);
+  transform: translateX(4px);
+}
+
+/* Archive Notice */
+.archive-notice {
+  max-width: 900px;
+  padding-top: var(--space-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.archive-notice p {
+  font-size: var(--font-size-sm);
   text-align: center;
-  margin-top: 3rem;
+  margin: 0;
 }
 
-/* Mobile responsiveness */
+/* Responsive */
 @media (max-width: 768px) {
-  .projects-section .list.blocks {
+  .project-item {
     grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
 
-  .project-item .link {
-    position: static;
-    margin-top: 1rem;
-    align-self: flex-start;
-  }
-}
-
-@media (max-width: 480px) {
-  .page-header {
-    margin-bottom: 1.5rem;
+  .project-meta {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
-  .intro-text {
-    margin-bottom: 2rem;
-  }
-
-  .projects-section {
-    margin: 2rem 0;
+  .project-tags {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 </style>

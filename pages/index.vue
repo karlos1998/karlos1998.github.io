@@ -4,24 +4,24 @@
       <div class="container">
         <div class="hero">
           <!-- Small badge -->
-          <div class="badge mb-lg fade-in">
+          <div class="badge mb-lg animate-fade-in">
             Dostępny do pracy
           </div>
 
           <!-- Main heading -->
-          <h1 class="hero-title mb-lg fade-in-up delay-1">
+          <h1 class="hero-title mb-lg animate-fade-in-up animate-delay-1">
             Karol Sójka
           </h1>
 
           <!-- Subtitle -->
-          <p class="hero-subtitle mb-2xl fade-in-up delay-2">
+          <p class="hero-subtitle mb-2xl animate-fade-in-up animate-delay-2">
             Back-end Developer & Automation Specialist z Długosiodła.
             <br/>
             Tworzę inteligentne rozwiązania, które działają.
           </p>
 
           <!-- CTA Buttons -->
-          <div class="hero-actions mb-2xl fade-in-up delay-3">
+          <div class="hero-actions mb-2xl animate-fade-in-up animate-delay-3">
             <NuxtLink to="/cv" class="btn btn-primary">
               Zobacz CV
             </NuxtLink>
@@ -34,7 +34,7 @@
           </div>
 
           <!-- Stats -->
-          <div class="stats-grid fade-in-up delay-4">
+          <div class="stats-grid animate-fade-in-up animate-delay-4">
             <div class="stat-item">
               <div class="stat-value">5+</div>
               <div class="stat-label">Lat doświadczenia</div>
@@ -51,7 +51,7 @@
         </div>
 
         <!-- Contact Info -->
-        <div class="contact-section fade-in-up delay-5">
+        <div class="contact-section animate-fade-in-up animate-delay-5">
           <div class="accent-line"></div>
           <div class="contact-grid">
             <a href="mailto:kontakt@letscode.it" class="contact-item">
@@ -76,34 +76,6 @@
 <script setup>
 useHead({
   title: "Let's Code It! - Karol Sójka",
-})
-
-onMounted(() => {
-  import('gsap').then(({gsap}) => {
-    gsap.from('.hero-title', {
-      duration: 1,
-      y: 40,
-      opacity: 0,
-      ease: 'power3.out',
-      delay: 0.2
-    })
-
-    gsap.from('.hero-subtitle', {
-      duration: 0.8,
-      y: 30,
-      opacity: 0,
-      ease: 'power3.out',
-      delay: 0.4
-    })
-
-    gsap.from('.hero-actions', {
-      duration: 0.8,
-      y: 20,
-      opacity: 0,
-      ease: 'power3.out',
-      delay: 0.6
-    })
-  })
 })
 </script>
 
@@ -231,6 +203,54 @@ onMounted(() => {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s;
+}
+
+.animate-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-2 {
+  animation-delay: 0.4s;
+}
+
+.animate-delay-3 {
+  animation-delay: 0.6s;
+}
+
+.animate-delay-4 {
+  animation-delay: 0.8s;
+}
+
+.animate-delay-5 {
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>
