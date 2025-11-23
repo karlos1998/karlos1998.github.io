@@ -10,30 +10,40 @@
             <div class="company-tagline">Software Development & Automation</div>
           </div>
 
-          <!-- Main Hero Content -->
-          <div class="hero-content">
-            <h1 class="hero-title fade-in-up">
-              <span class="hero-greeting">Cześć, jestem</span>
-              <span class="hero-name gradient-text">Karol Sójka</span>
-            </h1>
+          <!-- Main Hero Content with Photo -->
+          <div class="hero-content-wrapper">
+            <div class="hero-content">
+              <h1 class="hero-title fade-in-up">
+                <span class="hero-greeting">Cześć, jestem</span>
+                <span class="hero-name gradient-text">Karol Sójka</span>
+              </h1>
 
-            <p class="hero-description fade-in-up">
-              Back-end Developer specjalizujący się w automatyzacji procesów biznesowych
-              i tworzeniu inteligentnych systemów. Pomagam firmom oszczędzać czas poprzez
-              technologię.
-            </p>
+              <p class="hero-description fade-in-up">
+                Back-end Developer specjalizujący się w automatyzacji procesów biznesowych
+                i tworzeniu inteligentnych systemów. Pomagam firmom oszczędzać czas poprzez
+                technologię.
+              </p>
 
-            <!-- CTA Section -->
-            <div class="cta-section fade-in-up">
-              <NuxtLink to="/cv" class="btn btn-primary glow">
-                <span>Zobacz moje doświadczenie</span>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
-                  <path d="M5 10h10M10 5l5 5-5 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </NuxtLink>
-              <NuxtLink to="/projekty" class="btn btn-outline">
-                Projekty
-              </NuxtLink>
+              <!-- CTA Section -->
+              <div class="cta-section fade-in-up">
+                <NuxtLink to="/cv" class="btn btn-primary glow">
+                  <span>Zobacz moje doświadczenie</span>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                    <path d="M5 10h10M10 5l5 5-5 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </NuxtLink>
+                <NuxtLink to="/projekty" class="btn btn-outline">
+                  Projekty
+                </NuxtLink>
+              </div>
+            </div>
+
+            <!-- Profile Photo -->
+            <div class="hero-photo fade-in">
+              <div class="photo-container">
+                <img src="/images/selfie.png" alt="Karol Sójka" class="profile-image"/>
+                <div class="photo-glow"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -164,7 +174,8 @@ useHead({
 }
 
 .hero-inner {
-  max-width: 800px;
+  max-width: 1100px;
+  width: 100%;
 }
 
 /* Company Brand */
@@ -191,8 +202,17 @@ useHead({
 }
 
 /* Hero Content */
-.hero-content {
+.hero-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3xl);
   margin-top: var(--space-2xl);
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .hero-title {
@@ -222,6 +242,61 @@ useHead({
   color: var(--color-text-secondary);
   max-width: 680px;
   margin-bottom: var(--space-2xl);
+}
+
+/* Hero Photo */
+.hero-photo {
+  flex: 0 0 auto;
+  width: 350px;
+  max-width: 40%;
+  position: relative;
+}
+
+.photo-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 453 / 603;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  transition: all 0.4s var(--ease);
+}
+
+.profile-image:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8);
+}
+
+.photo-glow {
+  position: absolute;
+  inset: -30px;
+  background: radial-gradient(
+      circle at center,
+      rgba(251, 191, 36, 0.15) 0%,
+      transparent 70%
+  );
+  border-radius: var(--radius-xl);
+  opacity: 0.4;
+  z-index: 1;
+  animation: photo-pulse 3s ease-in-out infinite;
+}
+
+@keyframes photo-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
 }
 
 /* CTA Section */
@@ -428,12 +503,32 @@ useHead({
     grid-template-columns: 1fr;
     gap: var(--space-xl);
   }
+
+  .hero-content-wrapper {
+    gap: var(--space-2xl);
+  }
+
+  .hero-photo {
+    width: 350px;
+    max-width: 50%;
+  }
 }
 
 @media (max-width: 768px) {
   .hero-section {
     min-height: auto;
     padding: var(--space-2xl) 0;
+  }
+
+  .hero-content-wrapper {
+    flex-direction: column-reverse;
+    gap: var(--space-2xl);
+  }
+
+  .hero-photo {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
   }
 
   .hero-greeting {
