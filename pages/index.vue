@@ -42,7 +42,6 @@
             <div class="hero-photo fade-in">
               <div class="photo-container">
                 <img src="/images/selfie.png" alt="Karol Sójka" class="profile-image"/>
-                <div class="photo-glow"></div>
               </div>
             </div>
           </div>
@@ -262,30 +261,17 @@ useHead({
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: var(--radius-xl);
   position: relative;
   z-index: 2;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
   transition: all 0.4s var(--ease);
 }
 
 .profile-image:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8);
+  transform: translateY(-2px);
 }
 
 .photo-glow {
-  position: absolute;
-  inset: -30px;
-  background: radial-gradient(
-      circle at center,
-      rgba(251, 191, 36, 0.15) 0%,
-      transparent 70%
-  );
-  border-radius: var(--radius-xl);
-  opacity: 0.4;
-  z-index: 1;
-  animation: photo-pulse 3s ease-in-out infinite;
+  display: none;
 }
 
 @keyframes photo-pulse {
