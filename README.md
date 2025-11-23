@@ -226,7 +226,6 @@ Ten projekt jest prywatny i przeznaczony wyłącznie dla Karola Sójki.
 **Karol Sójka**
 
 - Email: kontakt@letscode.it
-- GG: 18993644
 - Facebook: [@Fadeusz](https://facebook.com/Fadeusz)
 
 ## 🙏 Podziękowania
