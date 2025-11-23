@@ -607,7 +607,7 @@ useHead({
   }
 
   .nav-links {
-    gap: 0.25rem;
+    gap: 0.125rem;
   }
 
   .nav-links-minimized {
@@ -615,12 +615,12 @@ useHead({
   }
 
   .nav-link {
-    font-size: 0.8125rem;
-    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.5rem;
   }
 
   .site-header.minimized .nav-link {
-    padding: 0.5rem 0.625rem;
+    padding: 0.5rem 0.5rem;
     min-width: 40px;
   }
 
@@ -629,7 +629,7 @@ useHead({
   }
 
   .nav-link-cta {
-    margin-left: 0.25rem;
+    margin-left: 0.125rem;
   }
 
   .site-header.minimized .nav-link-cta {
@@ -637,23 +637,23 @@ useHead({
   }
 
   .logo-text {
-    font-size: 1.125rem;
-  }
-
-  .logo.logo-compact .logo-text {
     font-size: 1rem;
   }
 
+  .logo.logo-compact .logo-text {
+    font-size: 0.875rem;
+  }
+
   .logo-icon {
-    font-size: 1.5rem;
+    font-size: 1.375rem;
   }
 
   .logo.logo-compact .logo-icon {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 
   .site-header.minimized .logo-icon {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   .site-main {
@@ -663,6 +663,29 @@ useHead({
   .footer-content {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav-link {
+    font-size: 0.6875rem;
+    padding: 0.5rem 0.375rem;
+  }
+
+  .logo-text {
+    font-size: 0.875rem;
+  }
+
+  .logo-icon {
+    font-size: 1.25rem;
+  }
+
+  .nav-links {
+    gap: 0;
+  }
+
+  .nav-link-cta {
+    margin-left: 0;
   }
 }
 
