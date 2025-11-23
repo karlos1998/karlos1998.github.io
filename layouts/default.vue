@@ -184,7 +184,7 @@ useHead({
     },
     {
       property: 'og:image',
-      content: '/images/opengraph.png'
+      content: '/images/selfie-with-background.png'
     },
     {
       property: 'og:url',

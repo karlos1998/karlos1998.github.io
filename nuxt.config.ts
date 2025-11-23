@@ -47,7 +47,7 @@ export default defineNuxtConfig({
                     property: 'og:description',
                     content: 'Portfolio Karola Sójki - programisty i informatyka specjalizującego się w nowoczesnych technologiach.'
                 },
-                {property: 'og:image', content: '/images/opengraph.png'},
+                {property: 'og:image', content: '/images/selfie-with-background.png'},
                 {property: 'og:url', content: 'https://letscode.it'},
                 {property: 'og:type', content: 'website'},
                 // Twitter
@@ -57,7 +57,7 @@ export default defineNuxtConfig({
                     name: 'twitter:description',
                     content: 'Portfolio Karola Sójki - programisty i informatyka specjalizującego się w nowoczesnych technologiach.'
                 },
-                {name: 'twitter:image', content: '/images/opengraph.png'}
+                {name: 'twitter:image', content: '/images/selfie-with-background.png'}
             ],
             link: [
                 {rel: 'icon', type: 'image/png', href: '/images/favicon.png'},
@@ -72,7 +72,7 @@ export default defineNuxtConfig({
     // Build configuration
     nitro: {
         prerender: {
-            routes: ['/sitemap.xml', '/robots.txt']
+            routes: ['/sitemap.xml', '/robots.txt', '/', '/cv', '/projekty', '/kontakt']
         }
     },
 
