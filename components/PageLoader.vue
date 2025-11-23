@@ -8,10 +8,13 @@
 
       <!-- Main loader content -->
       <div class="loader-content">
-        <!-- Elegant animated dots -->
+        <!-- Four themed dots -->
         <div class="spinner-wrapper">
-          <div class="dots-spinner">
-            <div class="spinner-dot" v-for="i in 8" :key="i" :style="{ '--delay': `${i * 0.1}s`, '--i': i }"></div>
+          <div class="dots-orbit">
+            <div class="orbit-dot yellow"></div>
+            <div class="orbit-dot blue"></div>
+            <div class="orbit-dot red"></div>
+            <div class="orbit-dot green"></div>
           </div>
         </div>
 
@@ -150,12 +153,12 @@ onMounted(() => {
 /* Spinner */
 .spinner-wrapper {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   margin-bottom: 2rem;
 }
 
-.dots-spinner {
+.dots-orbit {
   position: relative;
   width: 100%;
   height: 100%;
@@ -164,63 +167,56 @@ onMounted(() => {
   justify-content: center;
 }
 
-.spinner-dot {
+.orbit-dot {
   position: absolute;
-  width: 12px;
-  height: 12px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
-  box-shadow: 0 0 15px rgba(251, 191, 36, 0.5);
-  animation: dotPulse 1.6s ease-in-out infinite;
-  animation-delay: var(--delay);
-
-  /* Position dots in circle */
-  --angle: calc(360deg / 8 * (var(--i)));
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(calc(45deg * (var(--i) - 1))) translateY(-35px);
+  animation: dotGlow 2s ease-in-out infinite;
 }
 
-.spinner-dot:nth-child(1) {
-  --i: 1;
+/* Theme colors matching site pages */
+.yellow {
+  background: #fbbf24;
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.6);
+  top: 0;
+  left: 0;
+  animation-delay: 0s;
 }
 
-.spinner-dot:nth-child(2) {
-  --i: 2;
+.blue {
+  background: #3b82f6;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  top: 0;
+  right: 0;
+  animation-delay: 0.5s;
 }
 
-.spinner-dot:nth-child(3) {
-  --i: 3;
+.red {
+  background: #ef4444;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+  bottom: 0;
+  right: 0;
+  animation-delay: 1s;
 }
 
-.spinner-dot:nth-child(4) {
-  --i: 4;
+.green {
+  background: #10b981;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+  bottom: 0;
+  left: 0;
+  animation-delay: 1.5s;
 }
 
-.spinner-dot:nth-child(5) {
-  --i: 5;
-}
-
-.spinner-dot:nth-child(6) {
-  --i: 6;
-}
-
-.spinner-dot:nth-child(7) {
-  --i: 7;
-}
-
-.spinner-dot:nth-child(8) {
-  --i: 8;
-}
-
-@keyframes dotPulse {
+@keyframes dotGlow {
   0%, 100% {
-    transform: translate(-50%, -50%) rotate(calc(45deg * (var(--i) - 1))) translateY(-35px) scale(0.5);
-    opacity: 0.3;
+    transform: scale(0.8);
+    opacity: 0.5;
   }
   50% {
-    transform: translate(-50%, -50%) rotate(calc(45deg * (var(--i) - 1))) translateY(-35px) scale(1.2);
+    transform: scale(1.2);
     opacity: 1;
+    box-shadow: 0 0 30px currentColor;
   }
 }
 
@@ -385,8 +381,8 @@ onMounted(() => {
   }
 
   .spinner-wrapper {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
 }
 </style>
