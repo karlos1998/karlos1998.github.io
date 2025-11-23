@@ -9,24 +9,24 @@
    CSS CUSTOM PROPERTIES
    ============================================ */
 :root {
-    /* Colors - Refined Dark Palette */
-    --color-bg: #0a0a0a;
-    --color-bg-secondary: #111111;
-    --color-bg-tertiary: #1a1a1a;
+    /* Colors - Premium Dark */
+    --color-bg: #000000;
+    --color-bg-secondary: #0a0a0a;
+    --color-bg-tertiary: #111111;
 
     --color-text: #ffffff;
-    --color-text-secondary: #a0a0a0;
-    --color-text-tertiary: #6b6b6b;
+    --color-text-secondary: #999999;
+    --color-text-tertiary: #666666;
 
-    /* Theme Accents - Subtle & Elegant */
-    --color-accent-yellow: #e5b567;
-    --color-accent-blue: #5b9bd5;
-    --color-accent-red: #d37676;
-    --color-accent-green: #6fb87f;
+    /* Theme Accents - Refined */
+    --color-accent-yellow: #fbbf24;
+    --color-accent-blue: #3b82f6;
+    --color-accent-red: #ef4444;
+    --color-accent-green: #10b981;
 
     --color-accent: var(--color-accent-yellow);
 
-    /* Spacing - Perfect Scale */
+    /* Spacing */
     --space-xs: 0.25rem;
     --space-sm: 0.5rem;
     --space-md: 1rem;
@@ -39,6 +39,7 @@
     --radius-sm: 0.375rem;
     --radius-md: 0.5rem;
     --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
     --radius-full: 9999px;
 
     /* Typography */
@@ -185,36 +186,58 @@ a:hover {
     align-items: center;
     justify-content: center;
     gap: var(--space-sm);
-    padding: 0.75rem 1.5rem;
+    padding: 0.875rem 1.75rem;
     font-size: var(--font-base);
     font-weight: 600;
     border: 1px solid transparent;
     border-radius: var(--radius-full);
     cursor: pointer;
-    transition: all 0.2s var(--ease);
+    transition: all 0.3s var(--ease);
     white-space: nowrap;
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
 .btn-primary {
     background: var(--color-accent);
-    color: var(--color-bg);
+    color: #000;
+    box-shadow: 0 4px 14px 0 rgba(229, 181, 103, 0.25);
 }
 
 .btn-primary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(229, 181, 103, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(229, 181, 103, 0.4);
 }
 
 .btn-outline {
     background: transparent;
     color: var(--color-text);
-    border-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .btn-outline:hover {
     border-color: var(--color-accent);
     background: rgba(229, 181, 103, 0.05);
+    box-shadow: 0 0 20px rgba(229, 181, 103, 0.1);
 }
 
 .btn-ghost {
@@ -231,46 +254,39 @@ a:hover {
    ============================================ */
 .card {
     background: var(--color-bg-secondary);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-xl);
     padding: var(--space-xl);
     transition: all 0.3s var(--ease);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+    transparent,
+    rgba(251, 191, 36, 0.5),
+    transparent
+    );
+    opacity: 0;
+    transition: opacity 0.3s var(--ease);
 }
 
 .card:hover {
-    border-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(251, 191, 36, 0.3);
     transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(251, 191, 36, 0.1);
 }
 
-.card-minimal {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: var(--space-lg);
-}
-
-.card-minimal:hover {
-    background: var(--color-bg-secondary);
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-/* ============================================
-   COMPONENTS - GRID
-   ============================================ */
-.grid {
-    display: grid;
-    gap: var(--space-lg);
-}
-
-.grid-2 {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.grid-3 {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.grid-4 {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.card:hover::before {
+    opacity: 1;
 }
 
 /* ============================================
@@ -284,9 +300,10 @@ a:hover {
     font-size: var(--font-sm);
     font-weight: 500;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-full);
     color: var(--color-text-secondary);
+    backdrop-filter: blur(10px);
 }
 
 .tag {
@@ -297,9 +314,15 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-sm);
     color: var(--color-text-tertiary);
+    transition: all 0.2s var(--ease);
+}
+
+.tag:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
 }
 
 /* ============================================
@@ -307,15 +330,51 @@ a:hover {
    ============================================ */
 .divider {
     height: 1px;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.08);
     margin: var(--space-xl) 0;
 }
 
 .accent-line {
     width: 48px;
     height: 3px;
-    background: var(--color-accent);
+    background: linear-gradient(90deg, var(--color-accent), transparent);
     border-radius: var(--radius-full);
+}
+
+/* ============================================
+   GRADIENT TEXT
+   ============================================ */
+.gradient-text {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ============================================
+   GLOW EFFECTS
+   ============================================ */
+.glow {
+    position: relative;
+}
+
+.glow::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s var(--ease);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.glow:hover::after {
+    opacity: 1;
 }
 
 /* ============================================
@@ -444,6 +503,24 @@ a:hover {
     }
 }
 
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
 .fade-in {
     animation: fadeIn 0.6s var(--ease);
 }
@@ -452,11 +529,15 @@ a:hover {
     animation: fadeInUp 0.8s var(--ease);
 }
 
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
 /* ============================================
    SCROLLBAR
    ============================================ */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -466,10 +547,11 @@ a:hover {
 ::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-full);
+    border: 2px solid var(--color-bg);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* ============================================
@@ -477,7 +559,7 @@ a:hover {
    ============================================ */
 ::selection {
     background: var(--color-accent);
-    color: var(--color-bg);
+    color: #000;
 }
 
 /* ============================================
@@ -497,12 +579,6 @@ a:hover {
     .section {
         min-height: auto;
         padding: var(--space-2xl) 0;
-    }
-
-    .grid-2,
-    .grid-3,
-    .grid-4 {
-        grid-template-columns: 1fr;
     }
 }
 
