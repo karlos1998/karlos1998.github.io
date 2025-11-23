@@ -17,9 +17,7 @@
                 <span class="slash">/</span>
                 <span class="bracket">&gt;</span>
               </div>
-              <Transition name="fade-slide">
-                <span v-if="!isMinimized" class="logo-text">Let's Code It</span>
-              </Transition>
+              <span class="logo-text" :class="{ 'logo-text-hidden': isMinimized }">Let's Code It</span>
             </div>
           </NuxtLink>
 
@@ -215,22 +213,6 @@ useHead({
   position: relative;
 }
 
-/* Transitions */
-.fade-slide-enter-active,
-.fade-slide-leave-active {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.fade-slide-enter-from {
-  opacity: 0;
-  transform: translateX(-10px);
-}
-
-.fade-slide-leave-to {
-  opacity: 0;
-  transform: translateX(-10px);
-}
-
 /* Scroll Progress Bar */
 .scroll-progress-bar {
   position: fixed;
@@ -272,7 +254,13 @@ useHead({
   backdrop-filter: blur(8px) saturate(150%);
   -webkit-backdrop-filter: blur(8px) saturate(150%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.05s,
+  top 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+  background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+  border-radius 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.05s,
+  border 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+  box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+  padding 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.05s;
   will-change: width, top, background, border-radius;
 }
 
@@ -337,7 +325,7 @@ useHead({
   display: flex;
   align-items: center;
   gap: 0.875rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: gap 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-header.minimized .logo-container {
@@ -393,17 +381,28 @@ useHead({
   font-weight: 800;
   color: var(--color-text);
   letter-spacing: -0.03em;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+  width 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+  margin 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   position: relative;
   white-space: nowrap;
+  display: inline-block;
+  max-width: 200px;
+  overflow: hidden;
 }
 
 .logo.logo-compact .logo-text {
   font-size: 1.125rem;
+}
+
+.logo-text-hidden {
+  opacity: 0;
+  max-width: 0;
+  margin-left: 0 !important;
 }
 
 /* Nav Links */
