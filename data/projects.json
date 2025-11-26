@@ -1,5 +1,274 @@
 [
   {
+    "id": "simply-connect",
+    "title": "Simply Connect",
+    "description": "API do wysyłania i odczytywania SMS z panelu webowego lub integracji z istniejącymi projektami. Używa aplikacji Android na nieużywanym telefonie z kartą SIM.",
+    "date": "2024-01",
+    "tags": [
+      "Laravel",
+      "Vue.js",
+      "TypeScript",
+      "PrimeVue",
+      "Docker",
+      "Java",
+      "Android"
+    ],
+    "link": {
+      "url": "https://simply-connect.ovh",
+      "label": "Zobacz projekt"
+    }
+  },
+  {
+    "id": "simply-connect-notifications",
+    "title": "Laravel Simply Connect Notifications",
+    "description": "Wtyczka integracji projektu Simply Connect z projektami Laravel. Rozszerza klasę Notifications do wysyłania SMS.",
+    "date": "2024-01",
+    "tags": [
+      "Laravel",
+      "REST API",
+      "Composer",
+      "PHP"
+    ],
+    "link": {
+      "url": "https://github.com/karlos1998/simply-connect-laravel-notifications",
+      "label": "Zobacz na GitHub"
+    }
+  },
+  {
+    "id": "scraper-gsm-arena",
+    "title": "Scraper GSM Arena",
+    "description": "REST API do scrapowania strony GSM Arena. Pozwala pobierać zdjęcia telefonów na podstawie modelu poprzez proste zapytania HTTP.",
+    "date": "2024-01",
+    "tags": [
+      "Java",
+      "Spring Boot",
+      "REST API",
+      "Selenium",
+      "MongoDB"
+    ],
+    "link": {
+      "url": "https://github.com/karlos1998/GsmDeviceImageApi",
+      "label": "Zobacz na GitHub"
+    }
+  },
+  {
+    "id": "waste-wise",
+    "title": "Waste Wise",
+    "description": "System CRM oparty na platformie BDO do zarządzania odpadami. Umożliwia wystawianie kart odpadów, tworzenie faktur, planowanie tras oraz masową zmianę statusów kart.",
+    "date": "2024-01",
+    "tags": [
+      "Laravel",
+      "Vue.js",
+      "REST API",
+      "Pusher",
+      "InertiaJs",
+      "Redis",
+      "Meilisearch"
+    ],
+    "link": {
+      "url": "#",
+      "label": "Projekt komercyjny"
+    }
+  },
+  {
+    "id": "pzpn-scraper",
+    "title": "PZPN Scraper",
+    "description": "API do scrapowania strony PZPN z listą klubów sportowych. GraphQL API dostarczające szczegóły rozgrywek wybranego klubu sportowego dla aplikacji mobilnej.",
+    "date": "2024-01",
+    "tags": [
+      "Java",
+      "Spring Boot",
+      "GraphQL",
+      "Selenium",
+      "MongoDB"
+    ],
+    "link": {
+      "url": "https://github.com/karlos1998/GsmDeviceImageApi",
+      "label": "Zobacz na GitHub"
+    }
+  },
+  {
+    "id": "paliwa-plynne",
+    "title": "Paliwa Płynne",
+    "description": "Aplikacja CRM dla firmy zajmującej się analizą cen paliw płynnych oraz organizowaniem targów branżowych.",
+    "date": "2024-01",
+    "tags": [
+      "Laravel",
+      "Vue.js",
+      "TypeScript",
+      "Laravel Forge"
+    ],
+    "link": {
+      "url": "https://rejestracja.paliwa.pl",
+      "label": "Zobacz projekt"
+    }
+  },
+  {
+    "id": "trackmark",
+    "title": "Trackmark",
+    "description": "System do śledzenia i zarządzania markami oraz produktami. Zaawansowane narzędzie do monitorowania rynku i konkurencji.",
+    "date": "2023-01",
+    "tags": [
+      "Nest.js",
+      "Vue.js",
+      "TypeScript",
+      "MongoDB"
+    ],
+    "link": {
+      "url": "#",
+      "label": "Projekt komercyjny"
+    }
+  },
+  {
+    "id": "helios",
+    "title": "Helios",
+    "description": "Zaawansowany system zarządzania energią słoneczną. Monitoruje panele fotowoltaiczne i optymalizuje wydajność instalacji.",
+    "date": "2023-01",
+    "tags": [
+      "Laravel",
+      "Vue.js",
+      "IoT",
+      "Real-time"
+    ],
+    "link": {
+      "url": "#",
+      "label": "Projekt komercyjny"
+    }
+  },
+  {
+    "id": "ozc",
+    "title": "OZC",
+    "description": "System do zarządzania odpadami komunalnymi. Kompleksowe rozwiązanie dla firm zajmujących się gospodarką odpadami.",
+    "date": "2023-01",
+    "tags": [
+      "Laravel",
+      "Vue.js",
+      "GIS",
+      "Reporting"
+    ],
+    "link": {
+      "url": "#",
+      "label": "Projekt komercyjny"
+    }
+  },
+  {
+    "id": "seekly",
+    "title": "Seekly",
+    "description": "Zaawansowany system wyszukiwania oparty na Elasticsearch. Wysokowydajne API do wyszukiwania i indeksowania danych.",
+    "date": "2023-01",
+    "tags": [
+      "Spring Boot",
+      "Elasticsearch",
+      "Java",
+      "Search Engine"
+    ],
+    "link": {
+      "url": "#",
+      "label": "Projekt komercyjny"
+    }
+  },
+  {
+    "id": "eco-panel",
+    "title": "Eco Panel",
+    "description": "Panel zarządzania środowiskowego dla monitorowania emisji CO2 i innych wskaźników ekologicznych.",
+    "date": "2023-01",
+    "tags": [
+      "Laravel",
+      "Vue.js",
+      "Charts",
+      "Analytics"
+    ],
+    "link": {
+      "url": "#",
+      "label": "Projekt komercyjny"
+    }
+  },
+  {
+    "id": "events",
+    "title": "Events",
+    "description": "Backend aplikacji mobilnej do wyszukiwania wydarzeń w okolicy na podstawie preferencji użytkownika. Synchronizuje wydarzenia z Facebooka i podobnych platform.",
+    "date": "2024-01",
+    "tags": [
+      "Laravel",
+      "REST API",
+      "Mobile Backend"
+    ],
+    "link": {
+      "url": "#",
+      "label": "Aplikacja mobilna"
+    }
+  },
+  {
+    "id": "itms",
+    "title": "ITMS",
+    "description": "System do zarządzania słupkami ruchomymi. Obsługuje przychodzące połączenia telefoniczne i otwiera przejazdy dla mieszkańców osiedli.",
+    "date": "2024-01",
+    "tags": [
+      "Laravel",
+      "LiveWire",
+      "WebSocket",
+      "PHP",
+      "MySQL",
+      "Node.js"
+    ],
+    "link": {
+      "url": "#",
+      "label": "Projekt komercyjny"
+    }
+  },
+  {
+    "id": "sim-app",
+    "title": "SIM App",
+    "description": "Aplikacja do wysyłania SMS wykorzystująca komendy AT do komunikacji z modemami GSM.",
+    "date": "2024-01",
+    "tags": [
+      "Laravel",
+      "Vue.js",
+      "Tailwind CSS",
+      "Python",
+      "PHP",
+      "MySQL",
+      "Docker"
+    ],
+    "link": {
+      "url": "https://sim-app.ovh",
+      "label": "Zobacz projekt"
+    }
+  },
+  {
+    "id": "virtigia",
+    "title": "Virtigia",
+    "description": "Hobbystyczny projekt gry webowej stworzony dla zabawy i eksperymentów z technologiami webowymi.",
+    "date": "2021-01",
+    "tags": [
+      "JavaScript",
+      "Canvas",
+      "PHP",
+      "MySQL",
+      "C#"
+    ],
+    "link": {
+      "url": "#",
+      "label": "Projekt hobbystyczny"
+    }
+  },
+  {
+    "id": "pbs-banking",
+    "title": "PBS - Banking SMS Bot",
+    "description": "System powiadomień SMS dla grupy banków spółdzielczych. Automatyczne alerty o transakcjach, logowaniach do systemu, zmianach sald. Integracja z core banking systems poprzez REST API.",
+    "date": "2020-08",
+    "tags": [
+      "PHP",
+      "JavaScript",
+      "Banking",
+      "API"
+    ],
+    "link": {
+      "url": "https://pbs.letscode.it",
+      "label": "Zobacz projekt"
+    }
+  },
+  {
     "id": "sim-gateway",
     "title": "SIM Gateway na Raspberry Pi",
     "description": "Bramka SMS wykorzystująca modem GSM i Raspberry Pi. System obsługuje wysyłkę masowych powiadomień, kolejkowanie wiadomości i monitoring statusu dostarczenia. Wykorzystywana w bankach do alertów transakcyjnych.",
@@ -31,22 +300,6 @@
     }
   },
   {
-    "id": "pbs-banking",
-    "title": "PBS - Banking SMS Bot",
-    "description": "System powiadomień SMS dla grupy banków spółdzielczych. Automatyczne alerty o transakcjach, logowaniach do systemu, zmianach sald. Integracja z core banking systems poprzez REST API.",
-    "date": "2020-08",
-    "tags": [
-      "PHP",
-      "JavaScript",
-      "Banking",
-      "API"
-    ],
-    "link": {
-      "url": "https://pbs.letscode.it",
-      "label": "Zobacz projekt"
-    }
-  },
-  {
     "id": "dlugosiollo-film",
     "title": "Film promocyjny - Długosiodło",
     "description": "Profesjonalny film promocyjny miejscowości Długosiodło. Montaż, korekcja kolorów, sound design. Wykorzystany do promocji turystyki lokalnej.",
@@ -59,6 +312,38 @@
     "link": {
       "url": "https://www.youtube.com/watch?v=fu2swf9R-Mg",
       "label": "Zobacz na YouTube"
+    }
+  },
+  {
+    "id": "payland-nexo",
+    "title": "Płatności Payland Nexo",
+    "description": "System płatności elektronicznych zintegrowany z terminalami płatniczymi Nexo. Obsługa transakcji kartowych dla punktów sprzedaży.",
+    "date": "2023-01",
+    "tags": [
+      "C#",
+      "JavaScript",
+      "Payment Systems",
+      "POS"
+    ],
+    "link": {
+      "url": "#",
+      "label": "Projekt komercyjny"
+    }
+  },
+  {
+    "id": "bank-pbs-api",
+    "title": "Bank PBS API",
+    "description": "Integracja API z systemami bankowymi PBS wykorzystująca Puppeteer do automatyzacji procesów webowych.",
+    "date": "2023-01",
+    "tags": [
+      "Node.js",
+      "Puppeteer",
+      "Banking API",
+      "Automation"
+    ],
+    "link": {
+      "url": "#",
+      "label": "Projekt komercyjny"
     }
   }
 ]

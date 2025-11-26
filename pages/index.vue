@@ -6,8 +6,12 @@
         <div class="hero-inner">
           <!-- Company Brand -->
           <div class="company-brand mb-xl fade-in">
-            <div class="company-logo">Let's Code It</div>
-            <div class="company-tagline">Software Development & Automation</div>
+            <div class="company-logo">
+              Let's Code It
+            </div>
+            <div class="company-tagline">
+              Software Development & Automation
+            </div>
           </div>
 
           <!-- Main Hero Content with Photo -->
@@ -27,12 +31,28 @@
               <!-- CTA Section -->
               <div class="cta-section fade-in-up">
                 <NuxtLink to="/cv" class="btn btn-primary glow">
-                  <span>Zobacz moje doświadczenie</span>
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
-                    <path d="M5 10h10M10 5l5 5-5 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <span>
+                    Zobacz moje doświadczenie
+                  </span>
+                  <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      stroke="currentColor"
+                  >
+                    <path
+                        d="M5 10h10M10 5l5 5-5 5"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
                   </svg>
                 </NuxtLink>
-                <NuxtLink to="/projekty" class="btn btn-outline">
+                <NuxtLink
+                    to="/projekty"
+                    class="btn btn-outline"
+                >
                   Projekty
                 </NuxtLink>
               </div>
@@ -149,13 +169,13 @@
 
 <script setup>
 useHead({
-  title: "Let's Code It! - Karol Sójka - Automatyzacja & Development",
+  title: 'Let\'s Code It! - Karol Sójka - Automatyzacja & Development',
   meta: [
     {
       name: 'description',
-      content: 'Let\'s Code It - Karol Sójka. Specjalista od automatyzacji procesów, back-end development i integracji systemów. 5+ lat doświadczenia.'
-    }
-  ]
+      content: 'Let\'s Code It - Karol Sójka. Specjalista od automatyzacji procesów, back-end development i integracji systemów. 5+ lat doświadczenia.',
+    },
+  ],
 })
 </script>
 

@@ -6,7 +6,9 @@
           <!-- Header -->
           <header class="page-header">
             <h1>Projekty</h1>
-            <p class="lead">Wybrane prace i open-source contributions</p>
+            <p class="lead">
+              Wybrane prace i open-source contributions
+            </p>
             <div class="accent-line mt-lg"></div>
           </header>
 
@@ -30,9 +32,20 @@
               </div>
 
               <div class="project-footer">
-                <a :href="project.link.url" target="_blank" rel="noopener" class="project-link">
-                  {{ project.link.label }} →
-                </a>
+                <div class="project-links">
+                  <NuxtLink :to="`/projekty/${project.id}`" class="project-link primary">
+                    Zobacz szczegóły →
+                  </NuxtLink>
+                  <a
+                      v-if="project.link.url !== '#'"
+                      :href="project.link.url"
+                      target="_blank"
+                      rel="noopener"
+                      class="project-link secondary"
+                  >
+                    {{ project.link.label }} →
+                  </a>
+                </div>
               </div>
             </article>
           </div>
@@ -63,7 +76,7 @@ const formatDate = (dateStr) => {
   const months = {
     '01': 'Styczeń', '02': 'Luty', '03': 'Marzec', '04': 'Kwiecień',
     '05': 'Maj', '06': 'Czerwiec', '07': 'Lipiec', '08': 'Sierpień',
-    '09': 'Wrzesień', '10': 'Październik', '11': 'Listopad', '12': 'Grudzień'
+    '09': 'Wrzesień', '10': 'Październik', '11': 'Listopad', '12': 'Grudzień',
   }
   return `${months[month]} ${year}`
 }
@@ -161,6 +174,11 @@ const formatDate = (dateStr) => {
   margin-top: var(--space-sm);
 }
 
+.project-links {
+  display: flex;
+  gap: var(--space-sm);
+}
+
 .project-link {
   display: inline-flex;
   align-items: center;
@@ -170,6 +188,14 @@ const formatDate = (dateStr) => {
   color: var(--color-accent);
   text-decoration: none;
   transition: all 0.2s var(--ease);
+}
+
+.project-link.primary {
+  color: var(--color-accent);
+}
+
+.project-link.secondary {
+  color: var(--color-text-secondary);
 }
 
 .project-link:hover {
