@@ -21,7 +21,7 @@
                 <div class="skill-item">
                   <div class="skill-header">
                     <span class="skill-name">Java & Spring Boot</span>
-                    <span class="skill-level">Advanced</span>
+                    <span class="skill-level">Intermediate</span>
                   </div>
                   <p class="skill-desc">Backend development, REST APIs, web scraping, microservices, Selenium
                     automation</p>
@@ -56,7 +56,7 @@
                 <div class="skill-item">
                   <div class="skill-header">
                     <span class="skill-name">Vue.js & Frontend</span>
-                    <span class="skill-level">Intermediate</span>
+                    <span class="skill-level">Advanced</span>
                   </div>
                   <p class="skill-desc">Modern web interfaces, SPA development, PrimeVue, Inertia.js integration</p>
                 </div>
