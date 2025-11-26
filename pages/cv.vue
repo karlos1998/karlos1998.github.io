@@ -20,10 +20,20 @@
               <div class="skill-list">
                 <div class="skill-item">
                   <div class="skill-header">
-                    <span class="skill-name">C#</span>
+                    <span class="skill-name">Java & Spring Boot</span>
                     <span class="skill-level">Advanced</span>
                   </div>
-                  <p class="skill-desc">Aplikacje Windows, systemy desktop, backend services</p>
+                  <p class="skill-desc">Backend development, REST APIs, web scraping, microservices, Selenium
+                    automation</p>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-header">
+                    <span class="skill-name">Laravel (PHP)</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <p class="skill-desc">Full-stack web applications, API development, Inertia.js, Livewire, Eloquent
+                    ORM</p>
                 </div>
 
                 <div class="skill-item">
@@ -31,31 +41,32 @@
                     <span class="skill-name">JavaScript / Node.js</span>
                     <span class="skill-level">Advanced</span>
                   </div>
-                  <p class="skill-desc">Full-stack development, automation, web scraping</p>
+                  <p class="skill-desc">Full-stack development, automation, web scraping, Express.js, Vue.js
+                    integration</p>
                 </div>
 
                 <div class="skill-item">
                   <div class="skill-header">
-                    <span class="skill-name">PHP</span>
-                    <span class="skill-level">Intermediate</span>
-                  </div>
-                  <p class="skill-desc">Backend development, API integration</p>
-                </div>
-
-                <div class="skill-item">
-                  <div class="skill-header">
-                    <span class="skill-name">SQL</span>
+                    <span class="skill-name">SQL & Databases</span>
                     <span class="skill-level">Advanced</span>
                   </div>
-                  <p class="skill-desc">Database design, optimization, complex queries</p>
+                  <p class="skill-desc">MySQL, PostgreSQL, MongoDB, Redis, complex queries, performance optimization</p>
                 </div>
 
                 <div class="skill-item">
                   <div class="skill-header">
-                    <span class="skill-name">HTML / CSS / Vue.js</span>
+                    <span class="skill-name">Vue.js & Frontend</span>
                     <span class="skill-level">Intermediate</span>
                   </div>
-                  <p class="skill-desc">Modern web interfaces, responsive design</p>
+                  <p class="skill-desc">Modern web interfaces, SPA development, PrimeVue, Inertia.js integration</p>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-header">
+                    <span class="skill-name">DevOps & Tools</span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
+                  <p class="skill-desc">Docker, Git, Linux, Nginx, CI/CD, cloud deployment, server management</p>
                 </div>
               </div>
             </section>
@@ -182,7 +193,7 @@ useHead({
 }
 
 .lead {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-xl);
   color: var(--color-text-secondary);
   font-weight: 400;
 }
@@ -205,7 +216,7 @@ useHead({
 }
 
 .section-title {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-2xl);
   margin-bottom: var(--space-lg);
 }
 
@@ -233,19 +244,19 @@ useHead({
 }
 
 .skill-name {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-lg);
   font-weight: 600;
   color: var(--color-text);
 }
 
 .skill-level {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-sm);
   color: var(--color-accent);
   font-weight: 500;
 }
 
 .skill-desc {
-  font-size: var(--font-size-base);
+  font-size: var(--font-base);
   color: var(--color-text-secondary);
   margin: 0;
 }
@@ -258,13 +269,13 @@ useHead({
 }
 
 .experience-item h4 {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-xl);
   margin-bottom: var(--space-sm);
   color: var(--color-text);
 }
 
 .experience-item p {
-  font-size: var(--font-size-base);
+  font-size: var(--font-base);
   line-height: 1.7;
   color: var(--color-text-secondary);
   margin: 0;
@@ -282,7 +293,7 @@ useHead({
 }
 
 .sidebar-title {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-lg);
   margin-bottom: var(--space-md);
   color: var(--color-text);
 }
@@ -294,7 +305,7 @@ useHead({
 }
 
 .simple-list li {
-  font-size: var(--font-size-base);
+  font-size: var(--font-base);
   color: var(--color-text-secondary);
   padding: var(--space-xs) 0;
   position: relative;
@@ -310,13 +321,13 @@ useHead({
 
 .edu-item strong {
   display: block;
-  font-size: var(--font-size-base);
+  font-size: var(--font-base);
   margin-bottom: var(--space-xs);
   color: var(--color-text);
 }
 
 .edu-item p {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-sm);
   margin: 0;
 }
 

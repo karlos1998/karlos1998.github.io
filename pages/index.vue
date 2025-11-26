@@ -160,6 +160,16 @@
               </div>
               <div class="contact-card-arrow">→</div>
             </a>
+
+            <a href="https://www.linkedin.com/in/karol-sójka-17952825b/" target="_blank"
+               class="contact-card fade-in-up">
+              <div class="contact-card-icon">💼</div>
+              <div class="contact-card-content">
+                <div class="contact-card-label">Professional</div>
+                <div class="contact-card-value">LinkedIn</div>
+              </div>
+              <div class="contact-card-arrow">→</div>
+            </a>
           </div>
         </div>
       </div>
