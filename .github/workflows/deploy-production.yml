@@ -1,0 +1,71 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [ 'production' ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        run: npm run generate
+
+      - name: Create archive
+        run: |
+          cd .output/public
+          tar -czf ../../site.tar.gz .
+          cd ../..
+
+      - name: Deploy to server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 22
+          source: "site.tar.gz"
+          target: "/var/www/domains/www.letscode.it/"
+          overwrite: true
+
+      - name: Extract files and set permissions
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 22
+          script: |
+            cd /var/www/domains/www.letscode.it
+            
+            # Create public directory if it doesn't exist
+            mkdir -p public
+            
+            # Clean public directory
+            rm -rf public/*
+            
+            # Extract new files
+            tar -xzf site.tar.gz -C public/
+            
+            # Remove archive
+            rm -f site.tar.gz
+            
+            # Set proper permissions
+            chmod -R 755 public/
+            
+            echo "Production deployment completed successfully!"
