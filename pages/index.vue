@@ -30,28 +30,31 @@
 
               <!-- CTA Section -->
               <div class="cta-section fade-in-up">
-                <NuxtLink to="/cv" class="btn btn-primary glow">
+                <NuxtLink
+                  to="/cv"
+                  class="btn btn-primary glow"
+                >
                   <span>
                     Zobacz moje doświadczenie
                   </span>
                   <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      stroke="currentColor"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
                   >
                     <path
-                        d="M5 10h10M10 5l5 5-5 5"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                      d="M5 10h10M10 5l5 5-5 5"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
                     />
                   </svg>
                 </NuxtLink>
                 <NuxtLink
-                    to="/projekty"
-                    class="btn btn-outline"
+                  to="/projekty"
+                  class="btn btn-outline"
                 >
                   Projekty
                 </NuxtLink>
@@ -61,7 +64,11 @@
             <!-- Profile Photo -->
             <div class="hero-photo fade-in">
               <div class="photo-container">
-                <img src="/images/selfie.png" alt="Karol Sójka" class="profile-image"/>
+                <img
+                  src="/images/selfie.png"
+                  alt="Karol Sójka"
+                  class="profile-image"
+                >
               </div>
             </div>
           </div>
@@ -74,21 +81,39 @@
       <div class="container">
         <div class="stats-wrapper fade-in">
           <div class="stat-card">
-            <div class="stat-number gradient-text">5+</div>
-            <div class="stat-label">Lat doświadczenia</div>
-            <div class="stat-description">w programowaniu i automatyzacji</div>
+            <div class="stat-number gradient-text">
+              5+
+            </div>
+            <div class="stat-label">
+              Lat doświadczenia
+            </div>
+            <div class="stat-description">
+              w programowaniu i automatyzacji
+            </div>
           </div>
 
           <div class="stat-card">
-            <div class="stat-number gradient-text">50+</div>
-            <div class="stat-label">Projektów</div>
-            <div class="stat-description">dla firm i klientów indywidualnych</div>
+            <div class="stat-number gradient-text">
+              50+
+            </div>
+            <div class="stat-label">
+              Projektów
+            </div>
+            <div class="stat-description">
+              dla firm i klientów indywidualnych
+            </div>
           </div>
 
           <div class="stat-card">
-            <div class="stat-number gradient-text">100%</div>
-            <div class="stat-label">Satysfakcja</div>
-            <div class="stat-description">długoterminowa współpraca</div>
+            <div class="stat-number gradient-text">
+              100%
+            </div>
+            <div class="stat-label">
+              Satysfakcja
+            </div>
+            <div class="stat-description">
+              długoterminowa współpraca
+            </div>
           </div>
         </div>
       </div>
@@ -98,25 +123,35 @@
     <section class="services-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title fade-in">Specjalizacja</h2>
-          <p class="section-subtitle fade-in">Technologie, w których czuję się najlepiej</p>
+          <h2 class="section-title fade-in">
+            Specjalizacja
+          </h2>
+          <p class="section-subtitle fade-in">
+            Technologie, w których czuję się najlepiej
+          </p>
         </div>
 
         <div class="services-grid">
           <div class="service-card fade-in-up">
-            <div class="service-icon">🤖</div>
+            <div class="service-icon">
+              🤖
+            </div>
             <h3>Automatyzacja Procesów</h3>
             <p>Web scraping, boty, automatyczne przetwarzanie danych. Eliminacja powtarzalnych zadań.</p>
           </div>
 
           <div class="service-card fade-in-up">
-            <div class="service-icon">💬</div>
+            <div class="service-icon">
+              💬
+            </div>
             <h3>Chatboty & API</h3>
             <p>Integracje z Facebook Messenger, Telegram. Systemy komunikacji z klientem.</p>
           </div>
 
           <div class="service-card fade-in-up">
-            <div class="service-icon">🔌</div>
+            <div class="service-icon">
+              🔌
+            </div>
             <h3>Integracje Systemów</h3>
             <p>Łączenie różnych platform, synchronizacja danych, REST API, webhooks.</p>
           </div>
@@ -129,12 +164,19 @@
       <div class="container">
         <div class="contact-wrapper">
           <div class="contact-header">
-            <h2 class="section-title fade-in">Porozmawiajmy o projekcie</h2>
-            <p class="section-subtitle fade-in">Skontaktuj się ze mną w dogodny dla Ciebie sposób</p>
+            <h2 class="section-title fade-in">
+              Porozmawiajmy o projekcie
+            </h2>
+            <p class="section-subtitle fade-in">
+              Skontaktuj się ze mną w dogodny dla Ciebie sposób
+            </p>
           </div>
 
           <div class="contact-cards">
-            <NuxtLink to="/kontakt" class="contact-card fade-in-up">
+            <NuxtLink
+              to="/kontakt"
+              class="contact-card fade-in-up"
+            >
               <div class="contact-card-icon">✉️</div>
               <div class="contact-card-content">
                 <div class="contact-card-label">Email</div>
@@ -143,7 +185,11 @@
               <div class="contact-card-arrow">→</div>
             </NuxtLink>
 
-            <a href="https://www.google.pl/maps/place/Długosiodło" target="_blank" class="contact-card fade-in-up">
+            <a
+              href="https://www.google.pl/maps/place/Długosiodło"
+              target="_blank"
+              class="contact-card fade-in-up"
+            >
               <div class="contact-card-icon">📍</div>
               <div class="contact-card-content">
                 <div class="contact-card-label">Lokalizacja</div>
@@ -152,17 +198,11 @@
               <div class="contact-card-arrow">→</div>
             </a>
 
-            <a href="http://facebook.com/Fadeusz" target="_blank" class="contact-card fade-in-up">
-              <div class="contact-card-icon">🔗</div>
-              <div class="contact-card-content">
-                <div class="contact-card-label">Social Media</div>
-                <div class="contact-card-value">Facebook</div>
-              </div>
-              <div class="contact-card-arrow">→</div>
-            </a>
-
-            <a href="https://www.linkedin.com/in/karol-sójka-17952825b/" target="_blank"
-               class="contact-card fade-in-up">
+            <a
+              href="https://www.linkedin.com/in/karol-sójka-17952825b/"
+              target="_blank"
+              class="contact-card fade-in-up"
+            >
               <div class="contact-card-icon">💼</div>
               <div class="contact-card-content">
                 <div class="contact-card-label">Professional</div>
@@ -261,7 +301,7 @@ useHead({
   display: block;
   font-size: clamp(3.5rem, 10vw, 7rem);
   font-weight: 900;
-  line-height: 0.95;
+  line-height: 1.2;
   letter-spacing: -0.05em;
 }
 
