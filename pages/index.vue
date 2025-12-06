@@ -187,6 +187,7 @@
           <br/>
           Aktualności
         </h2>
+        <NuxtLink to="/blog" class="blog-main-btn">Zobacz wszystkie wpisy</NuxtLink>
         <article class="blog-entry" itemscope itemtype="https://schema.org/BlogPosting">
           <header>
             <h3 itemprop="headline">
@@ -840,5 +841,28 @@ useHead({
   opacity: 1;
   color: #ffcf35;
   text-decoration-style: solid;
+}
+
+.blog-main-btn {
+  display: inline-block;
+  margin: 0 0 2.2em 0;
+  padding: 0.6em 1.6em;
+  font-size: var(--font-lg);
+  color: #fff;
+  background: linear-gradient(89deg, #29292d 0%, #ffbb33 100%);
+  border: none;
+  border-radius: 19px;
+  font-weight: 700;
+  box-shadow: 0 2px 18px #fbbf2440;
+  text-decoration: none;
+  letter-spacing: 0.00em;
+  transition: filter 0.14s, background 0.17s;
+  margin-bottom: var(--space-xl);
+}
+
+.blog-main-btn:hover, .blog-main-btn:focus {
+  filter: brightness(1.12);
+  background: linear-gradient(92deg, #42391a 23%, #fbbf24 97%);
+  color: #fffcae;
 }
 </style>
