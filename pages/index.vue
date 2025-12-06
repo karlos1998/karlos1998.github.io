@@ -23,12 +23,17 @@
               </h1>
 
               <p class="hero-description fade-in-up">
-                Back-end Developer specjalizujący się w automatyzacji procesów biznesowych
-                i tworzeniu inteligentnych systemów. Pomagam firmom oszczędzać czas poprzez
-                technologię.
+                Programista full-stack z ponad 5-letnim doświadczeniem w automatyzacji procesów oraz integracjach
+                systemów IT. Pomagam firmom i osobom prywatnym wdrażać nowoczesne rozwiązania technologiczne, zawsze
+                stawiając na solidność i partnerskie podejście.<br/>
+                <br/>
+                Programowanie to dla mnie nie tylko praca, ale i pasja – w wolnych chwilach śledzę trendy IT, doradzam
+                młodszym kolegom po fachu oraz oddaję się swoim pasjom, w tym motoryzacji (uwielbiam japońskie auta,
+                prywatnie Toyota Supra MK4).<br/>
+                <br/>
+                Zainteresowany współpracą lub chcesz porozmawiać o projekcie? Zajrzyj do zakładki kontakt!
               </p>
-
-              <!-- CTA Section -->
+              <!-- CTA Section (bez Social Proof) -->
               <div class="cta-section fade-in-up">
                 <NuxtLink
                   to="/cv"
@@ -56,18 +61,16 @@
                   to="/projekty"
                   class="btn btn-outline"
                 >
-                  Projekty
+                  Moje Projekty
                 </NuxtLink>
               </div>
             </div>
-
-            <!-- Profile Photo -->
             <div class="hero-photo fade-in">
               <div class="photo-container">
                 <img
-                  src="/images/selfie.png"
-                  alt="Karol Sójka"
-                  class="profile-image"
+                    src="/images/selfie.png"
+                    alt="Karol Sójka"
+                    class="profile-image"
                 >
               </div>
             </div>
@@ -88,46 +91,71 @@
               Lat doświadczenia
             </div>
             <div class="stat-description">
-              w programowaniu i automatyzacji
+              w programowaniu, automatyzacji oraz rozwoju pasji motoryzacyjnej
             </div>
           </div>
-
-          <div class="stat-card">
-            <div class="stat-number gradient-text">
-              50+
-            </div>
-            <div class="stat-label">
-              Projektów
-            </div>
-            <div class="stat-description">
-              dla firm i klientów indywidualnych
-            </div>
-          </div>
-
           <div class="stat-card">
             <div class="stat-number gradient-text">
               100%
             </div>
             <div class="stat-label">
-              Satysfakcja
+              Satysfakcja Klientów
             </div>
             <div class="stat-description">
-              długoterminowa współpraca
+              długoterminowa współpraca i indywidualne podejście
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number gradient-text">
+              10+
+            </div>
+            <div class="stat-label">
+              Duże projekty
+            </div>
+            <div class="stat-description">
+              CRM, Integracje API, Automation, systemy dla firm. Portfolio na stronie.
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Services/Specialization Section -->
+    <!-- Nowa sekcja Zainteresowania & Technologie -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-card interests-card">
+            <h2><span style="font-size:1.5em">🛠️</span> Zainteresowania</h2>
+            <ul>
+              <li><span style="font-size:1.2em">🚗</span> Motoryzacja (szczególnie japońskie auta, m.in. Toyota Supra
+                MK4)
+              </li>
+              <li><span style="font-size:1.2em">💡</span> Nowoczesne technologie</li>
+              <li><span style="font-size:1.2em">🤝</span> Mentoring i współpraca zespołowa</li>
+              <li><span style="font-size:1.2em">🎯</span> Strzelectwo sportowe & kolekcjonerska broń palna (Beretta 92x
+                Performance)
+              </li>
+            </ul>
+          </div>
+          <div class="about-card tech-card">
+            <h2><span style="font-size:1.5em">💻</span> Technologie</h2>
+            <ul>
+              <li>PHP (Laravel), JavaScript, TypeScript, Vue.js, Node.js, NestJS</li>
+              <li>Java (+SpringBoot), MySQL, MongoDB, Docker, Git, BitBucket</li>
+              <li>CI/CD, code review, Jira, Scrum, Proxmox, VMWare</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Wzmocniona sekcja Services / Specjalizacja -->
     <section class="services-section">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title fade-in">
-            Specjalizacja
+            Co mogę dla Ciebie zaprogramować?
           </h2>
           <p class="section-subtitle fade-in">
-            Technologie, w których czuję się najlepiej
+            Automatyzacje, integracje, API, chatboty – efektywne rozwiązania od pasjonata programowania i motoryzacji!
           </p>
         </div>
 
@@ -156,6 +184,42 @@
             <p>Łączenie różnych platform, synchronizacja danych, REST API, webhooks.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Blog/News Section -->
+    <section class="blog-section">
+      <div class="container">
+        <h2 class="section-title">
+          Blog
+          <br/>
+          Aktualności
+        </h2>
+        <article class="blog-entry" itemscope itemtype="https://schema.org/BlogPosting">
+          <header>
+            <h3 itemprop="headline">
+              Od programowania do pasji:
+              <br/>
+              Supra MK4, automatyzacja i kod
+            </h3>
+            <meta itemprop="datePublished" content="2025-06-06"/>
+          </header>
+          <div itemprop="articleBody">
+            <p>
+              Jako programista i miłośnik motoryzacji łączę światy, które z pozoru nie mają ze sobą nic wspólnego.
+              Pracuję nad projektem <b>Toyoty Supra MK4</b> wykorzystując do tego wiedzę z automatyzacji, programowania
+              oraz elektroniki i nowych technologii. Każdy problem traktuję jak wyzwanie, które można rozwiązać tak jak
+              bug w kodzie – testy, iteracje, optymalizacja. Więcej o mojej drodze przeczytasz na
+              <NuxtLink to="/projekty">stronie projektów</NuxtLink>
+              .
+            </p>
+          </div>
+          <footer>
+            <span>By <span itemprop="author">Karol Sójka</span> | <a
+                href="https://www.linkedin.com/in/karol-sójka-17952825b/" rel="author"
+                target="_blank">LinkedIn</a></span>
+          </footer>
+        </article>
       </div>
     </section>
 
@@ -214,16 +278,82 @@
         </div>
       </div>
     </section>
+    <!-- Social media section na dole, z GitHub -->
+    <section class="footer-socials">
+      <div class="container">
+        <a href="https://www.linkedin.com/in/karol-sójka-17952825b/" target="_blank" rel="noopener"
+           aria-label="LinkedIn" class="footer-icon">LinkedIn</a>
+        <a href="https://github.com/karlos1998" target="_blank" rel="noopener" aria-label="GitHub" class="footer-icon">GitHub</a>
+      </div>
+    </section>
   </div>
 </template>
 
 <script setup>
 useHead({
-  title: 'Let\'s Code It! - Karol Sójka - Automatyzacja & Development',
+  title: 'Let\'s Code It! – Karol Sójka | Programista, Motoryzacja, Automatyzacja',
   meta: [
     {
       name: 'description',
-      content: 'Let\'s Code It - Karol Sójka. Specjalista od automatyzacji procesów, back-end development i integracji systemów. 5+ lat doświadczenia.',
+      content: 'Oficjalna strona Karola Sójki – programista full-stack, pasjonat motoryzacji i właściciel Toyoty Supra MK4. Zajmuję się automatyzacją, integracjami systemów i rozwojem oprogramowania. Sprawdź portfolio, projekty i poznaj unikalne połączenie kodu i pasji!',
+    },
+    {
+      name: 'keywords',
+      content: 'Karol Sójka, Let\'s Code It, programista, automatyzacja, motoryzacja, Toyota Supra, Supra MK4, backend developer, portfolio, chatboty, integracje, API, technologie: PHP, Laravel, TypeScript, Node.js, Vue, MySQL, Docker',
+    },
+    {
+      property: 'og:title',
+      content: 'Let\'s Code It! – Karol Sójka | Programista, Motoryzacja, Automatyzacja',
+    },
+    {
+      property: 'og:description',
+      content: 'Portfolio i projekty Karola Sójki – doświadczonego programisty i właściciela Toyoty Supra. Łączę kod z pasją!',
+    },
+    {
+      property: 'og:image',
+      content: '/images/selfie-with-background.png',
+    },
+    {
+      property: 'og:url',
+      content: 'https://letscode.it',
+    },
+    // Twitter meta
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    },
+    {
+      name: 'twitter:title',
+      content: 'Let\'s Code It! – Karol Sójka | Programista, Motoryzacja, Automatyzacja',
+    },
+    {
+      name: 'twitter:description',
+      content: 'Oficjalna strona Karola Sójki – programista, motoryzacja, automatyzacja, Toyota Supra MK4. Zobacz projekty i portfolio!',
+    },
+    {
+      name: 'twitter:image',
+      content: '/images/selfie-with-background.png',
+    },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: `{
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Karol Sójka",
+        "url": "https://letscode.it",
+        "image": "https://letscode.it/images/selfie-with-background.png",
+        "alumniOf": {
+          "@type": "Organization",
+          "name": "ONX Center, TrueCode.tech, Kristonet"
+        },
+        "jobTitle": "Programista Full-stack",
+        "sameAs": [
+          "https://www.linkedin.com/in/karol-sójka-17952825b/",
+          "https://github.com/karlos1998"
+        ]
+      }`,
     },
   ],
 })
@@ -475,6 +605,40 @@ useHead({
   margin: 0;
 }
 
+/* Blog Section */
+.blog-section {
+  padding: var(--space-3xl) 0;
+}
+
+.blog-entry {
+  margin-bottom: var(--space-2xl);
+}
+
+.blog-entry header {
+  margin-bottom: var(--space-lg);
+}
+
+.blog-entry h3 {
+  font-size: var(--font-2xl);
+  margin-bottom: var(--space-md);
+}
+
+.blog-entry footer {
+  font-size: var(--font-sm);
+  color: var(--color-text-tertiary);
+}
+
+/* Update Info */
+.update-info {
+  padding: var(--space-2xl) 0;
+  text-align: center;
+}
+
+.update-label {
+  font-size: var(--font-sm);
+  color: var(--color-text-tertiary);
+}
+
 /* Contact Section */
 .contact-section {
   padding: var(--space-3xl) 0 var(--space-3xl);
@@ -616,6 +780,57 @@ useHead({
 
   .contact-card-arrow {
     display: none;
+  }
+}
+
+/* About Section - nowy styl */
+.about-section {
+  padding: var(--space-3xl) 0;
+}
+
+.about-grid {
+  display: flex;
+  gap: var(--space-2xl);
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.about-card {
+  flex: 1 1 340px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(251, 191, 36, 0.10);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  margin-bottom: var(--space-xl);
+}
+
+.interests-card h2, .tech-card h2 {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-lg);
+}
+
+.about-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-card ul li {
+  font-size: var(--font-lg);
+  color: var(--color-text-secondary);
+  padding: var(--space-sm) 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    flex-direction: column;
+    gap: var(--space-xl);
   }
 }
 </style>

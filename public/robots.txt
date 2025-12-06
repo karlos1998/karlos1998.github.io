@@ -1,16 +1,5 @@
 User-agent: *
 Allow: /
-
-# Allow all content
-Allow: /
-Allow: /cv
-Allow: /projekty
-Allow: /filmy
-Allow: /sekret
-
-# Disallow development files
-Disallow: /_nuxt/
-Disallow: /node_modules/
-
-# Sitemap
 Sitemap: https://letscode.it/sitemap.xml
+
+# SEO Karol Sójka, Let's Code It, programista, motoryzacja, Toyota Supra MK4, automatyzacja, projekty IT, portfolio, LinkedIn: Karol Sójka, GitHub: karlos1998
