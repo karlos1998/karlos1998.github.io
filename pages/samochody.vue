@@ -118,12 +118,75 @@
 
 <script setup>
 useHead({
-  title: 'Pasja samochodowa – Supra MK4, JDM, Kanjo | Karol Sójka',
+  title: 'Pasja samochodowa – Supra MK4, JDM, Kanjo Nights, polska motoryzacja | Karol Sójka',
   meta: [
     {
       name: 'description',
-      content: 'Oglądaj najlepsze polskie i japońskie spoty samochodowe – Supra MK4 Team Poland, Kanjo Night Warsaw, JDM klasyka. Fani Supra i JDM znajdą tu świetne filmy i inspiracje.'
+      content: 'Bogata kolekcja filmów z wyjazdów Supra MK4 Team Poland i japońskich spotów JDM Kanjo Nights – Supra MK4, Supra Team Poland, Toyota, polskie i japońskie eventy samochodowe, spoty Supra Poland. Zobacz najlepsze video team Poland, samochody japońskie, polska motoryzacja, inspiracje JDM, motopasja.'
     },
+    {
+      name: 'keywords',
+      content: 'Toyota Supra MK4, Supra Team Poland, Supra Polska, Supra zlot, Supra filmy, Kanjo Night Warsaw, JDM, spoty samochodowe, wydarzenia motoryzacyjne, pasja samochodowa, Supra video, YouTube motoryzacja, team Poland event, Supra zloty Polska, japońska motoryzacja, Supra Bieszczady, Supra Bukowina, motopasja, Supra filmy wyjazdowe'
+    },
+    {
+      property: 'og:title',
+      content: 'Pasja samochodowa – Supra MK4, Kanjo, JDM | Karol Sójka'
+    },
+    {
+      property: 'og:description',
+      content: 'Najlepsze filmy Supra MK4 Team Poland, spoty Kanjo Night Warsaw, motoryzacja JDM. Fani Supra MK4 i JDM znajdą tu świetne polskie i japońskie filmy – subskrybuj autorów na YouTube!'
+    },
+    {
+      property: 'og:type', content: 'video.other'
+    },
+    {
+      property: 'og:url', content: 'https://letscode.it/samochody'
+    },
+    {
+      property: 'og:image', content: '/images/selfie-with-background.png'
+    },
+    {
+      name: 'twitter:card', content: 'summary_large_image'
+    },
+    {
+      name: 'twitter:title', content: 'Pasja samochodowa – Supra, JDM, spoty | Karol Sójka'
+    },
+    {
+      name: 'twitter:description',
+      content: 'Polska Supra MK4, team Poland, Kanjo Nights, JDM spoty – kolekcja najlepszych motofilmów, playlisty, inspiracje. Autorzy na YouTube.'
+    },
+    {
+      name: 'twitter:image', content: '/images/selfie-with-background.png'
+    },
+    {
+      rel: 'canonical', href: 'https://letscode.it/samochody'
+    }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: `{
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Pasja samochodowa – Supra MK4, JDM, Kanjo Nights",
+        "description": "Wyjątkowa kolekcja filmów Supra MK4 Team Poland, spotów Kanjo Night Warsaw, JDM, eventów motoryzacyjnych – Supra MK4, Supra Polska, japonia, inspiracje.",
+        "author": { "@type": "Person", "name": "Karol Sójka" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://letscode.it/samochody" },
+        "image": "https://letscode.it/images/selfie-with-background.png",
+        "video": [
+          {"@type": "VideoObject", "name": "Supra MKIV Team Poland meet - Bieszczady 2021", "url": "https://www.youtube.com/watch?v=h9wBMa4WEEE"},
+          {"@type": "VideoObject", "name": "Supra MKIV Team Poland meet - Kotlina Kłodzka 2022", "url": "https://www.youtube.com/watch?v=VvPg7Vcg2ns"},
+          {"@type": "VideoObject", "name": "Najlepszy wyjazd Suprą ever! | Oficjalny Zlot Toyota Supra MK4 Polska", "url": "https://www.youtube.com/watch?v=l6s6Idko5qk"},
+          {"@type": "VideoObject", "name": "Supra MKIV Team Poland meet - Bukowina Tatrzańska 2023", "url": "https://www.youtube.com/watch?v=k-6KNEyB6iI"},
+          {"@type": "VideoObject", "name": "Kanjo Night Warsaw 16/X/22", "url": "https://www.youtube.com/watch?v=Fb0sWwoerPo"},
+          {"@type": "VideoObject", "name": "Kanjo Nights Warsaw - otwarcie sezonu 2023", "url": "https://www.youtube.com/watch?v=cSPpVV0DnFk"},
+          {"@type": "VideoObject", "name": "LET JDM's COOK | Kanjo Night Warsaw | FURIDE", "url": "https://www.youtube.com/watch?v=yj8sciUk7ok"},
+          {"@type": "VideoObject", "name": "KANJO NIGHT WARSAW 2023 VHS TAPES", "url": "https://www.youtube.com/watch?v=_ZrgZyA-ja4"},
+          {"@type": "VideoObject", "name": "[ Kanjo Nights 2025] [ Warszawa ] [ 30.08.2025 ]", "url": "https://www.youtube.com/watch?v=knADnGPPuSQ"},
+          {"@type": "VideoObject", "name": "Kanjo Night Warsaw 03.08.2022 | 4K", "url": "https://www.youtube.com/watch?v=Wju7Eirjwik"}
+        ]
+      }`
+    }
   ]
 })
 </script>
