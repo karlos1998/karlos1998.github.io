@@ -50,6 +50,94 @@ const posts: BlogPost[] = [
     content: `Aplikacja do obsługi SMS/MMS i zaawansowanego IVR dla firm. Integracja z numerami, automatyczne odbieranie, API, powiadomienia, voiceboty i interaktywny flow połączeń. <br><a href='https://www.linkedin.com/posts/karol-sójka-17952825b_chciałbym-zaprezentować-projekt-nad-którym-activity-7258257331140878336-kwD5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_4xO0B8lITzgpWQHAN3syh-w_Wdvia-k0' target='_blank'>Zobacz pełen opis na LinkedIn</a>`
   }
 ]
+
+useHead({
+  title: 'Blog – programowanie, automatyzacja, nowe projekty | Karol Sójka',
+  meta: [
+    {
+      name: 'description',
+      content: 'Blog Karola Sójki – posty o programowaniu (Node/TS/Vue3/Laravel), automatyzacja, voiceboty, telekomunikacja, własne projekty typu Margonem, system SMS/MMS, wyzwania IT i nowości dev.'
+    },
+    {
+      name: 'keywords',
+      content: 'blog IT, blog programisty, dev portfolio, automatyzacja, telekomunikacja, nodejs, mms, sms, API PHP, voicebot, margonem remake, Vue3 blog, projekty IT, nowoczesne technologie, integracje, chatbot, dev log, code'
+    },
+    {
+      property: 'og:title',
+      content: 'Blog – programowanie, technologie backend, automatyzacja | Karol Sójka'
+    },
+    {
+      property: 'og:description',
+      content: 'Najnowsze wpisy i posty Karola Sójki: programowanie, automatyzacja, telekomunikacja, głos/voicebot/SMS. Projekty, realizacje, hacki, IT.'
+    },
+    {
+      property: 'og:image', content: '/images/selfie-with-background.png'
+    },
+    {
+      property: 'og:type', content: 'blog'
+    },
+    {
+      property: 'og:url', content: 'https://letscode.it/blog'
+    },
+    {
+      name: 'twitter:card', content: 'summary_large_image'
+    },
+    {
+      name: 'twitter:title', content: 'Blog dev i automatyzacja – Karol Sójka'
+    },
+    {
+      name: 'twitter:description',
+      content: 'Wpisy i posty blogowe Karol Sójka: nowoczesne projekty IT, głos/sms, JDM, technologie, real-dev!'
+    },
+    {
+      name: 'twitter:image', content: '/images/selfie-with-background.png'
+    },
+    {
+      rel: 'canonical', href: 'https://letscode.it/blog'
+    }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: `{
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Blog Karol Sójka | Programowanie & Automatyzacja",
+        "description": "Najnowsze posty o dev/automatyzacji/komunikacji na letscode.it oraz LinkedIn.",
+        "url": "https://letscode.it/blog",
+        "blogPost": [
+          ${posts
+          .map(post => `{
+              "@type": "BlogPosting",
+              "headline": "${post.title}",
+              ${post.image ? `"image": "${post.image}",` : ''}
+              ${post.date ? `"datePublished": "${post.date}",` : ''}
+              "articleBody": "${post.content.replace(/<[^>]+>/g, '').substring(0, 190).replace(/"/g, '')}",
+              "url": "https://letscode.it/blog"
+            }`).join(",\n")}
+        ]
+      }`
+    },
+    {
+      type: 'application/ld+json',
+      children: `{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://letscode.it"
+        },{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://letscode.it/blog"
+        }]
+      }`
+    }
+  ]
+})
 </script>
 
 <style scoped>
