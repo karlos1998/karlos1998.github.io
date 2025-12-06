@@ -37,6 +37,11 @@
               <span v-else class="nav-link-icon">💼</span>
               <span class="nav-link-indicator"></span>
             </NuxtLink>
+            <NuxtLink to="/firma" class="nav-link" :title="isMinimized ? 'Firma' : ''">
+              <span v-if="!isMinimized" class="nav-link-text">Firma</span>
+              <span v-else class="nav-link-icon">📝</span>
+              <span class="nav-link-indicator"></span>
+            </NuxtLink>
             <NuxtLink to="/kontakt" class="nav-link nav-link-cta" :title="isMinimized ? 'Kontakt' : ''">
               <span v-if="!isMinimized" class="nav-link-text">Kontakt</span>
               <span v-else class="nav-link-icon">✉️</span>
@@ -141,6 +146,7 @@ const themeClass = computed(() => {
   if (path === '/') return 'theme-yellow'
   if (path === '/cv') return 'theme-blue'
   if (path === '/projekty') return 'theme-red'
+  if (path === '/firma') return 'theme-yellow'
   if (path === '/kontakt') return 'theme-green'
 
   return 'theme-yellow' // default
@@ -152,6 +158,7 @@ const pageTitle = computed(() => {
     '/': "Let's Code It! - Karol Sójka",
     '/cv': 'Moje CV - Karol Sójka',
     '/projekty': 'Projekty - Karol Sójka',
+    '/firma': 'Firma - Karol Sójka',
     '/kontakt': 'Kontakt - Karol Sójka'
   }
 
