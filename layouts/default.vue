@@ -21,7 +21,15 @@
             </div>
           </NuxtLink>
 
-          <div class="nav-links" :class="{ 'nav-links-minimized': isMinimized }">
+          <!-- Mobile hamburger icon -->
+          <button class="hamburger" @click="showMobileMenu = !showMobileMenu" aria-label="Menu" v-show="isMobile">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+
+          <!-- Desktop nav links -->
+          <div class="nav-links" :class="{ 'nav-links-minimized': isMinimized, 'nav-links-mobile-hide': isMobile }">
             <NuxtLink to="/" class="nav-link" :title="isMinimized ? 'Główna' : ''">
               <span v-if="!isMinimized" class="nav-link-text">Główna</span>
               <span v-else class="nav-link-icon">🏠</span>
@@ -51,6 +59,20 @@
         </nav>
       </div>
     </header>
+
+    <!-- Mobile fullscreen menu -->
+    <transition name="mobile-menu-fade">
+      <div v-if="showMobileMenu && isMobile" class="mobile-nav-overlay" @click.self="showMobileMenu = false">
+        <div class="mobile-nav-inner">
+          <NuxtLink to="/" class="mobile-nav-link" @click.native="showMobileMenu = false">🏠 Główna</NuxtLink>
+          <NuxtLink to="/cv" class="mobile-nav-link" @click.native="showMobileMenu = false">📄 CV</NuxtLink>
+          <NuxtLink to="/projekty" class="mobile-nav-link" @click.native="showMobileMenu = false">💼 Projekty</NuxtLink>
+          <NuxtLink to="/firma" class="mobile-nav-link" @click.native="showMobileMenu = false">📝 Firma</NuxtLink>
+          <NuxtLink to="/kontakt" class="mobile-nav-link mobile-cta" @click.native="showMobileMenu = false">✉️ Kontakt
+          </NuxtLink>
+        </div>
+      </div>
+    </transition>
 
     <!-- Star Background -->
     <StarBackground/>
@@ -209,6 +231,21 @@ useHead({
       href: '/images/favicon.png'
     }
   ]
+})
+
+const showMobileMenu = ref(false)
+const isMobile = ref(false)
+// mobile checker (on mount + on resize)
+const handleResize = () => {
+  isMobile.value = window.innerWidth <= 768
+}
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+  handleResize()
+})
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize)
 })
 </script>
 
@@ -594,6 +631,13 @@ useHead({
 
 /* Responsive */
 @media (max-width: 768px) {
+  .nav-links {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: flex;
+  }
   .site-header.minimized {
     top: 10px;
     max-width: calc(100% - 2rem);
@@ -716,5 +760,116 @@ useHead({
     width: 200%;
     height: 200%;
   }
+}
+
+/* Hamburger Icon Style */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.4em;
+  flex-direction: column;
+  gap: 3.5px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1201;
+}
+
+.hamburger-bar {
+  width: 28px;
+  height: 3.2px;
+  background: var(--color-accent);
+  border-radius: 6px;
+  display: block;
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    position: relative;
+  }
+}
+
+/* Fullscreen overlay mobile menu */
+.mobile-nav-overlay {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #26272b;
+  z-index: 9999 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInOverlay .25s;
+  margin: 0;
+  padding: 0;
+}
+.mobile-nav-inner {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1.7rem;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+.mobile-nav-link {
+  font-size: 2.05rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(90deg, rgba(251, 191, 36, 0.16) 0%, rgba(99, 102, 241, 0.13) 100%);
+  padding: 1.15em 0.8em;
+  border-radius: 1.8em;
+  transition: color 0.17s, background 0.19s, box-shadow 0.14s;
+  margin: 0 auto;
+  min-width: 180px;
+  width: 92%;
+  border: none;
+  outline: none;
+  box-shadow: 0 3px 19px rgba(251, 191, 36, .10);
+  letter-spacing: -0.01em;
+  display: block;
+}
+
+.mobile-nav-link + .mobile-nav-link {
+  margin-top: 0.5rem;
+}
+.mobile-nav-link.mobile-cta {
+  color: #fff;
+  background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+  font-weight: 900;
+  box-shadow: 0 2px 18px rgba(251, 191, 36, .18);
+}
+
+.mobile-nav-link:hover, .mobile-nav-link:focus {
+  color: #fff;
+  background: linear-gradient(90deg, #fbbf24 0%, #6366f1 100%);
+  box-shadow: 0 4px 30px rgba(99, 102, 241, 0.13);
+}
+.mobile-nav-link:active {
+  opacity: 0.93;
+}
+.mobile-menu-fade-enter-active {
+  transition: all 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.mobile-menu-fade-leave-active {
+  transition: all 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.mobile-menu-fade-enter-from, .mobile-menu-fade-leave-to {
+  opacity: 0;
+  transform: scale(.97);
+}
+
+.mobile-menu-fade-enter-to, .mobile-menu-fade-leave-from {
+  opacity: 1;
+  transform: scale(1);
 }
 </style>
