@@ -29,7 +29,9 @@
                 <br/>
                 Programowanie to dla mnie nie tylko praca, ale i pasja – w wolnych chwilach śledzę trendy IT, doradzam
                 młodszym kolegom po fachu oraz oddaję się swoim pasjom, w tym motoryzacji (uwielbiam japońskie auta,
-                prywatnie Toyota Supra MK4).<br/>
+                prywatnie Toyota Supra MK4
+                <NuxtLink to="/samochody" class="about-link">[więcej]</NuxtLink>
+                ).<br/>
                 <br/>
                 Zainteresowany współpracą lub chcesz porozmawiać o projekcie? Zajrzyj do zakładki kontakt!
               </p>
@@ -832,5 +834,19 @@ useHead({
     flex-direction: column;
     gap: var(--space-xl);
   }
+}
+
+.about-link {
+  font-size: 0.92em;
+  color: var(--color-accent);
+  margin-left: 0.3em;
+  text-decoration: underline dotted;
+  opacity: .82;
+}
+
+.about-link:hover {
+  opacity: 1;
+  color: #ffcf35;
+  text-decoration-style: solid;
 }
 </style>
