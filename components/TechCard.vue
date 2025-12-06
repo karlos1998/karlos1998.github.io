@@ -8,9 +8,7 @@
     </ul>
   </div>
 </template>
-<script setup>
-const props = defineProps({
-  items: {type: Array, required: true}
-})
+<script setup lang="ts">
+const {items} = defineProps<{ items: string[] }>()
 </script>
 // styl dziedziczony

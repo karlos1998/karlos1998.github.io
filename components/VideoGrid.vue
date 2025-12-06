@@ -13,13 +13,11 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import VideoCard from './VideoCard.vue'
+import type {Video} from '~/types/interfaces'
 
-defineProps({
-  title: String,
-  videos: {type: Array, required: true},
-})
+const {title, videos} = defineProps<{ title?: string, videos: Video[] }>()
 </script>
 
 <style scoped>

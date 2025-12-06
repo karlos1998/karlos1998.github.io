@@ -8,12 +8,10 @@
   </div>
 </template>
 
-<script setup>
-defineProps({
-  title: {type: String, required: true},
-  youtubeId: {type: String, required: true},
-  url: {type: String, required: true},
-})
+<script setup lang="ts">
+import type {Video} from '~/types/interfaces'
+
+const {title, youtubeId, url} = defineProps<Video>()
 </script>
 
 <style scoped>

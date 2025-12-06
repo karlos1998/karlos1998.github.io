@@ -5,11 +5,10 @@
   </div>
 </template>
 
-<script setup>
-defineProps({
-  title: String,
-  content: String,
-})
+<script setup lang="ts">
+import type {InfoCardProps} from '~/types/interfaces'
+
+const {title, content} = defineProps<InfoCardProps>()
 </script>
 
 <style scoped>

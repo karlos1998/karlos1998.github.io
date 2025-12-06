@@ -10,9 +10,9 @@
     </ul>
   </div>
 </template>
-<script setup>
-const props = defineProps({
-  items: {type: Array, required: true}
-})
+<script setup lang="ts">
+import type {InterestItem} from '~/types/interfaces'
+
+const {items} = defineProps<{ items: InterestItem[] }>()
 </script>
 // można odziedziczyć style z index.vue

@@ -10,14 +10,10 @@
     </div>
   </div>
 </template>
-<script setup>
-defineProps({
-  title: {type: String, required: true},
-  image: {type: String, default: ''},
-  content: {type: String, required: true},
-  linkedinUrl: {type: String, default: ''},
-  date: {type: String, default: ''},
-})
+<script setup lang="ts">
+import type {BlogPost} from '~/types/interfaces'
+
+const props = defineProps<BlogPost>()
 </script>
 <style scoped>
 .blog-post-card {

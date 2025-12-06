@@ -23,10 +23,11 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import BlogPostCard from '~/components/BlogPostCard.vue'
+import type {BlogPost} from '~/types/interfaces'
 
-const posts = [
+const posts: BlogPost[] = [
   {
     title: 'Jak stary modem 3G może stać się nowoczesną bramką telefoniczną',
     image: 'https://media.licdn.com/dms/image/v2/D4D22AQGSWQC7fReL8w/feedshare-shrink_800/B4DZiUwjcBHYAk-/0/1754842417240?e=1766620800&v=beta&t=LqLyzgWkF5pCMF1733kZzFO9rTSVszf98QMVFzetghM',

@@ -26,10 +26,11 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import VideoGrid from '~/components/VideoGrid.vue'
+import type {Video} from '~/types/interfaces'
 
-const supraVideos = [
+const supraVideos: Video[] = [
   {
     title: 'Supra MKIV Team Poland meet - Bieszczady 2021',
     youtubeId: 'h9wBMa4WEEE',
@@ -52,7 +53,7 @@ const supraVideos = [
   },
 ]
 
-const kanjoVideos = [
+const kanjoVideos: Video[] = [
   {
     title: 'Kanjo Night Warsaw 16/X/22',
     youtubeId: 'Fb0sWwoerPo',
