@@ -13,110 +13,78 @@
     </section>
     <section class="car-films-section">
       <div class="container">
-        <h2 class="film-section-title">Supra MK4 Team Poland – Eventy & Zloty</h2>
-        <div class="yt-grid">
-          <div class="yt-card">
-            <iframe src="https://www.youtube.com/embed/h9wBMa4WEEE"
-                    title="Supra MKIV Team Poland meet - Bieszczady 2021" frameborder="0" allowfullscreen></iframe>
-            <div class="yt-desc">
-              Supra MKIV Team Poland meet - Bieszczady 2021
-              <a class="yt-link" href="https://www.youtube.com/watch?v=h9wBMa4WEEE" target="_blank">Otwórz na
-                YouTube</a>
-            </div>
-          </div>
-          <div class="yt-card">
-            <iframe src="https://www.youtube.com/embed/VvPg7Vcg2ns"
-                    title="Supra MKIV Team Poland meet - Kotlina Kłodzka 2022" frameborder="0" allowfullscreen></iframe>
-            <div class="yt-desc">
-              Supra MKIV Team Poland meet - Kotlina Kłodzka 2022
-              <a class="yt-link" href="https://www.youtube.com/watch?v=VvPg7Vcg2ns" target="_blank">Otwórz na
-                YouTube</a>
-            </div>
-          </div>
-          <div class="yt-card">
-            <iframe src="https://www.youtube.com/embed/l6s6Idko5qk"
-                    title="Najlepszy wyjazd Suprą ever! | Oficjalny Zlot Toyota Supra MK4 Polska" frameborder="0"
-                    allowfullscreen></iframe>
-            <div class="yt-desc">
-              Najlepszy wyjazd Suprą ever! | Oficjalny Zlot Toyota Supra MK4 Polska
-              <a class="yt-link" href="https://www.youtube.com/watch?v=l6s6Idko5qk" target="_blank">Otwórz na
-                YouTube</a>
-            </div>
-          </div>
-          <div class="yt-card">
-            <iframe src="https://www.youtube.com/embed/k-6KNEyB6iI"
-                    title="Supra MKIV Team Poland meet - Bukowina Tatrzańska 2023" frameborder="0"
-                    allowfullscreen></iframe>
-            <div class="yt-desc">
-              Supra MKIV Team Poland meet - Bukowina Tatrzańska 2023
-              <a class="yt-link" href="https://www.youtube.com/watch?v=k-6KNEyB6iI" target="_blank">Otwórz na
-                YouTube</a>
-            </div>
-          </div>
-        </div>
-        <h2 class="film-section-title">Spoty JDM / Kanjo Night Warsaw</h2>
-        <div class="yt-grid">
-          <div class="yt-card">
-            <iframe src="https://www.youtube.com/embed/Fb0sWwoerPo" title="Kanjo Night Warsaw 16/X/22" frameborder="0"
-                    allowfullscreen></iframe>
-            <div class="yt-desc">
-              Kanjo Night Warsaw 16/X/22
-              <a class="yt-link" href="https://www.youtube.com/watch?v=Fb0sWwoerPo" target="_blank">Otwórz na
-                YouTube</a>
-            </div>
-          </div>
-          <div class="yt-card">
-            <iframe src="https://www.youtube.com/embed/cSPpVV0DnFk" title="Kanjo Nights Warsaw - otwarcie sezonu 2023"
-                    frameborder="0" allowfullscreen></iframe>
-            <div class="yt-desc">
-              Kanjo Nights Warsaw - otwarcie sezonu 2023
-              <a class="yt-link" href="https://www.youtube.com/watch?v=cSPpVV0DnFk" target="_blank">Otwórz na
-                YouTube</a>
-            </div>
-          </div>
-          <div class="yt-card">
-            <iframe src="https://www.youtube.com/embed/yj8sciUk7ok" title="LET JDM's COOK | Kanjo Night Warsaw | FURIDE"
-                    frameborder="0" allowfullscreen></iframe>
-            <div class="yt-desc">
-              𝐋𝐄𝐓 𝐉𝐃𝐌's 𝐂𝐎𝐎𝐊 | Kanjo Night Warsaw | FURIDE
-              <a class="yt-link" href="https://www.youtube.com/watch?v=yj8sciUk7ok" target="_blank">Otwórz na
-                YouTube</a>
-            </div>
-          </div>
-          <div class="yt-card">
-            <iframe src="https://www.youtube.com/embed/_ZrgZyA-ja4" title="KANJO NIGHT WARSAW 2023 VHS TAPES"
-                    frameborder="0" allowfullscreen></iframe>
-            <div class="yt-desc">
-              KANJO NIGHT WARSAW 2023 VHS TAPES
-              <a class="yt-link" href="https://www.youtube.com/watch?v=_ZrgZyA-ja4" target="_blank">Otwórz na
-                YouTube</a>
-            </div>
-          </div>
-          <div class="yt-card">
-            <iframe src="https://www.youtube.com/embed/knADnGPPuSQ"
-                    title="[ Kanjo Nights 2025] [ Warszawa ] [ 30.08.2025 ]" frameborder="0" allowfullscreen></iframe>
-            <div class="yt-desc">
-              [ Kanjo Nights 2025] [ Warszawa ] [ 30.08.2025 ]
-              <a class="yt-link" href="https://www.youtube.com/watch?v=knADnGPPuSQ" target="_blank">Otwórz na
-                YouTube</a>
-            </div>
-          </div>
-          <div class="yt-card">
-            <iframe src="https://www.youtube.com/embed/Wju7Eirjwik" title="Kanjo Night Warsaw 03.08.2022 | 4K"
-                    frameborder="0" allowfullscreen></iframe>
-            <div class="yt-desc">
-              Kanjo Night Warsaw 03.08.2022 | 4K
-              <a class="yt-link" href="https://www.youtube.com/watch?v=Wju7Eirjwik" target="_blank">Otwórz na
-                YouTube</a>
-            </div>
-          </div>
-        </div>
+        <VideoGrid
+            title="Supra MK4 Team Poland – Eventy & Zloty"
+            :videos="supraVideos"
+        />
+        <VideoGrid
+            title="Spoty JDM / Kanjo Night Warsaw"
+            :videos="kanjoVideos"
+        />
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
+import VideoGrid from '~/components/VideoGrid.vue'
+
+const supraVideos = [
+  {
+    title: 'Supra MKIV Team Poland meet - Bieszczady 2021',
+    youtubeId: 'h9wBMa4WEEE',
+    url: 'https://www.youtube.com/watch?v=h9wBMa4WEEE',
+  },
+  {
+    title: 'Supra MKIV Team Poland meet - Kotlina Kłodzka 2022',
+    youtubeId: 'VvPg7Vcg2ns',
+    url: 'https://www.youtube.com/watch?v=VvPg7Vcg2ns',
+  },
+  {
+    title: 'Najlepszy wyjazd Suprą ever! | Oficjalny Zlot Toyota Supra MK4 Polska',
+    youtubeId: 'l6s6Idko5qk',
+    url: 'https://www.youtube.com/watch?v=l6s6Idko5qk',
+  },
+  {
+    title: 'Supra MKIV Team Poland meet - Bukowina Tatrzańska 2023',
+    youtubeId: 'k-6KNEyB6iI',
+    url: 'https://www.youtube.com/watch?v=k-6KNEyB6iI',
+  },
+]
+
+const kanjoVideos = [
+  {
+    title: 'Kanjo Night Warsaw 16/X/22',
+    youtubeId: 'Fb0sWwoerPo',
+    url: 'https://www.youtube.com/watch?v=Fb0sWwoerPo',
+  },
+  {
+    title: 'Kanjo Nights Warsaw - otwarcie sezonu 2023',
+    youtubeId: 'cSPpVV0DnFk',
+    url: 'https://www.youtube.com/watch?v=cSPpVV0DnFk',
+  },
+  {
+    title: 'LET JDM\'s COOK | Kanjo Night Warsaw | FURIDE',
+    youtubeId: 'yj8sciUk7ok',
+    url: 'https://www.youtube.com/watch?v=yj8sciUk7ok',
+  },
+  {
+    title: 'KANJO NIGHT WARSAW 2023 VHS TAPES',
+    youtubeId: '_ZrgZyA-ja4',
+    url: 'https://www.youtube.com/watch?v=_ZrgZyA-ja4',
+  },
+  {
+    title: '[ Kanjo Nights 2025] [ Warszawa ] [ 30.08.2025 ]',
+    youtubeId: 'knADnGPPuSQ',
+    url: 'https://www.youtube.com/watch?v=knADnGPPuSQ',
+  },
+  {
+    title: 'Kanjo Night Warsaw 03.08.2022 | 4K',
+    youtubeId: 'Wju7Eirjwik',
+    url: 'https://www.youtube.com/watch?v=Wju7Eirjwik',
+  },
+]
+
 useHead({
   title: 'Pasja samochodowa – Supra MK4, JDM, Kanjo Nights, polska motoryzacja | Karol Sójka',
   meta: [

@@ -125,27 +125,17 @@
     <section class="about-section">
       <div class="container">
         <div class="about-grid">
-          <div class="about-card interests-card">
-            <h2><span style="font-size:1.5em">🛠️</span> Zainteresowania</h2>
-            <ul>
-              <li><span style="font-size:1.2em">🚗</span> Motoryzacja (szczególnie japońskie auta, m.in. Toyota Supra
-                MK4)
-              </li>
-              <li><span style="font-size:1.2em">💡</span> Nowoczesne technologie</li>
-              <li><span style="font-size:1.2em">🤝</span> Mentoring i współpraca zespołowa</li>
-              <li><span style="font-size:1.2em">🎯</span> Strzelectwo sportowe & kolekcjonerska broń palna (Beretta 92x
-                Performance)
-              </li>
-            </ul>
-          </div>
-          <div class="about-card tech-card">
-            <h2><span style="font-size:1.5em">💻</span> Technologie</h2>
-            <ul>
-              <li>PHP (Laravel), JavaScript, TypeScript, Vue.js, Node.js, NestJS</li>
-              <li>Java (+SpringBoot), MySQL, MongoDB, Docker, Git, BitBucket</li>
-              <li>CI/CD, code review, Jira, Scrum, Proxmox, VMWare</li>
-            </ul>
-          </div>
+          <InterestCard :items="[
+            { icon: '🚗', text: 'Motoryzacja (szczególnie japońskie auta, m.in. Toyota Supra MK4)', link: '', linkText: '' },
+            { icon: '💡', text: 'Nowoczesne technologie' },
+            { icon: '🤝', text: 'Mentoring i współpraca zespołowa' },
+            { icon: '🎯', text: 'Strzelectwo sportowe & kolekcjonerska broń palna (Beretta 92x Performance)' }
+          ]"/>
+          <TechCard :items="[
+            'PHP (Laravel), JavaScript, TypeScript, Vue.js, Node.js, NestJS',
+            'Java (+SpringBoot), MySQL, MongoDB, Docker, Git, BitBucket',
+            'CI/CD, code review, Jira, Scrum, Proxmox, VMWare',
+          ]"/>
         </div>
       </div>
     </section>
@@ -292,6 +282,8 @@
 </template>
 
 <script setup>
+import InterestCard from '~/components/InterestCard.vue'
+import TechCard from '~/components/TechCard.vue'
 useHead({
   title: 'Let\'s Code It! – Karol Sójka | Programista, Motoryzacja, Automatyzacja',
   meta: [

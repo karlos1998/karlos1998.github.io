@@ -10,33 +10,12 @@
     <section class="company-info">
       <div class="container">
         <div class="company-grid">
-          <div class="company-card">
-            <h2>Dane kontaktowe</h2>
-            <p>
-              Królowej Jadwigi 18<br>
-              07-210 Długosiodło
-            </p>
-            <p>NIP: <b>7622021352</b><br>
-              REGON: <b>528447821</b></p>
-          </div>
-          <div class="company-card">
-            <h2>Dane firmowe</h2>
-            <p>Nazwa pełna:<br><b>Let's Code IT - Karol Sójka</b></p>
-            <p>Adres rejestrowy:<br>
-              ul. Królowej Jadwigi 18<br>
-              07-210 Długosiodło
-            </p>
-            <p>NIP: <b>7622021352</b><br>
-              REGON: <b>528447821</b></p>
-            <p>Forma prawna: <b>Indywidualna działalność gospodarcza</b></p>
-            <p>Data rozpoczęcia działalności: <b>02.05.2024</b></p>
-          </div>
-          <div class="company-card">
-            <h2>Profil działalności</h2>
-            <p>Działalność usługowa w zakresie telekomunikacji, programowania komputerowego, doradztwa, infrastruktury
-              obliczeniowej oraz pozostała działalność usługowa w zakresie informacji.</p>
-            <p>Kod PKD: <b>62.01.Z</b> – Działalność związana z oprogramowaniem</p>
-          </div>
+          <InfoCard
+              v-for="(card, idx) in companyCards"
+              :key="card.title + idx"
+              :title="card.title"
+              :content="card.content"
+          />
         </div>
       </div>
     </section>
@@ -53,6 +32,22 @@ useHead({
     }
   ]
 })
+import InfoCard from '~/components/InfoCard.vue'
+
+const companyCards = [
+  {
+    title: 'Dane kontaktowe',
+    content: `Królowej Jadwigi 18<br>07-210 Długosiodło<br>NIP: <b>7622021352</b><br>REGON: <b>528447821</b>`
+  },
+  {
+    title: 'Dane firmowe',
+    content: `Nazwa pełna:<br><b>Let's Code IT - Karol Sójka</b><br>Adres rejestrowy:<br>ul. Królowej Jadwigi 18<br>07-210 Długosiodło<br>NIP: <b>7622021352</b><br>REGON: <b>528447821</b><br>Forma prawna: <b>Indywidualna działalność gospodarcza</b><br>Data rozpoczęcia działalności: <b>02.05.2024</b>`
+  },
+  {
+    title: 'Profil działalności',
+    content: `Działalność usługowa w zakresie telekomunikacji, programowania komputerowego, doradztwa, infrastruktury obliczeniowej oraz pozostała działalność usługowa w zakresie informacji.<br>Kod PKD: <b>62.01.Z</b> – Działalność związana z oprogramowaniem`
+  }
+]
 </script>
 
 <style scoped>
